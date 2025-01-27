@@ -38,9 +38,7 @@ div {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /* Updated to Montserrat */
     color: rgb(236, 236, 238);
-    /* Text color */
 }
 
 :root {
@@ -357,6 +355,9 @@ h1 {
 
 
 @media screen and (max-width: 991px) {
+    .logo-div {
+        scale: 80%;
+    }
 
     .menu-icon:checked+label,
     .menu-icon:not(:checked)+label {
@@ -372,11 +373,11 @@ h1 {
     }
 
     h1 {
-        font-size: 1rem;
-        -webkit-text-stroke: 2px transparent;
+        font-size: 1.5rem;
+        /* -webkit-text-stroke: 2px transparent;
         text-stroke: 2px transparent;
         -webkit-text-fill-color: black;
-        text-fill-color: black;
+        text-fill-color: black; */
         color: black;
     }
 
@@ -403,6 +404,11 @@ main {
     font-family: inherit;
 }
 
+.slider {
+    display: flex;
+}
+
+
 .item {
     width: 200px;
     height: 300px;
@@ -415,8 +421,26 @@ main {
     background-size: cover;
     border-radius: 20px;
     box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
-    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+    opacity: 0;
+    animation: show 0.75s ease-in-out forwards;
+    /* Apply animation */
 }
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+        /* Moves the item a little below */
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(-50%);
+        /* Restore to the original position */
+    }
+}
+
 
 
 .item:nth-child(1),
@@ -455,16 +479,14 @@ main {
     border-radius: 10px;
     /* text-shadow: 0 3px 8px rgb(0, 0, 0); */
     opacity: 0;
-    display: none;
+    /* display: none; */
     width: min(30vw, 400px);
     position: absolute;
+    /* /made relative/ */
     top: 50%;
     left: 3rem;
     transform: translateY(-50%);
 }
-
-
-
 
 .content .title {
     /* font-family: 'arial-black'; */
@@ -478,41 +500,46 @@ main {
 }
 
 /* Button Styles */
-/* Button Styling */
 .content button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: transparent; /* Initially transparent */
+    background-color: transparent;
+    /* Initially transparent */
     color: #fff;
     text-decoration: none;
-    border: 2px solid white; /* Border for visibility */
+    border: 2px solid white;
+    /* Border for visibility */
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for background color */
+    transition: background-color 0.3s;
+    /* Smooth transition for background color */
 }
 
 /* Anchor Link inside Button */
 .content button a {
-    color: inherit; /* Inherit color from button */
-    text-decoration: none; /* Remove underline from link */
+    color: inherit;
+    /* Inherit color from button */
+    text-decoration: none;
+    /* Remove underline from link */
 }
 
 /* Hover Effect */
 .content button:hover {
-    background-color: var(--logo-blue1); /* Change to blue when hovered */
+    background-color: var(--logo-blue1);
+    /* Change to blue when hovered */
 }
 
 .content button:hover a {
-    color: #fff; /* Ensure text remains white on hover */
+    color: #fff;
+    /* Ensure text remains white on hover */
 }
-
-
 
 .item:nth-child(2) .content {
     display: block;
     animation: show 0.75s ease-in-out 0.3s forwards;
 }
+
 
 @keyframes show {
     0% {
@@ -549,7 +576,8 @@ main {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-@media (min-width: 650px) and (max-width: 900px) {
+
+@media (min-width: 481px) and (max-width: 900px) {
     .content .title {
         font-size: 1.2rem;
     }
@@ -579,34 +607,90 @@ main {
         left: calc(50% + 540px);
         opacity: 0;
     }
+
+    .content-small{
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .content-small .button-group {
+        font-size: smaller;
+        font-family: inherit;
+        /* margin-left: 1rem; */
+        flex-direction: row; /* Stack buttons vertically on small screens */
+        gap: 5px; /* Add spacing between buttons */
+    }
 }
+.content-small {
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* Light background for visibility */
+    padding: 1.5rem;
+    border-radius: 10px 10px 20px 20px; /* 10px radius for top corners, 20px for bottom corners */
+    margin: 16px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.content-small .title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.content-small .description {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.content-small .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 12px; /* Add spacing between buttons */
+    justify-content: center; /* Center align the buttons */
+    align-items: center; /* Align buttons vertically */
+}
+
+.content-small button {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid transparent; /* Removed unnecessary border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.content-small button a {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--logo-blue6);
+    padding: 10px 20px; /* Proper padding for button text */
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block; /* Ensures proper alignment */
+}
+
+.content-small button a:hover {
+    background-color: var(--logo-blue1); /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+
+
 
 /* Adjustments for Extra Small Screens (Phones) */
 @media (max-width: 480px) {
-    .logo-div {
-        scale: 80%;
+    .slider-container {
+        /* display: flex; */
+        height: 60vh;
     }
 
-    .content {
-        width: 90%;
-        left: 5%;
-    }
-
-    .content .title {
-        font-size: 0.9rem;
-    }
-
-    .content .description {
-        font-size: 0.7rem;
-    }
-
-    .content button {
-        font-size: 0.75rem;
+    .item:nth-child(2) .content {
+        display: none;
     }
 
     .item {
-        width: 120px;
-        height: 200px;
+        height: 50%;
     }
 
     .item:nth-child(3) {
@@ -629,51 +713,106 @@ main {
         opacity: 0;
         display: none;
     }
+
+    .content-small{
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .content-small .button-group {
+        font-size: smaller;
+        font-family: inherit;
+        /* margin-left: 1rem; */
+        flex-direction: row; /* Stack buttons vertically on small screens */
+        gap: 5px; /* Add spacing between buttons */
+    }
+
+    .content-small .description {
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+        text-align: justify;
+    }
+
+    .content-small button a {
+        font-size: 0.7rem;
+    }
 }
 
-
-/* upcoming */
+/* General Styling */
 .upcoming-section {
     max-width: 100%;
-    /* Prevent elements from going beyond the viewport */
     overflow: hidden;
-    /* Prevent accidental overflow */
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     padding: 50px;
     background-color: #ffffff;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Adding subtle shadow to make the section stand out */
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-out;
+    /* Animation for section */
+    text-align: center;
+}
+
+.upcoming-heading {
+    margin-bottom: 20px;
+    animation: bounceInUp 1.5s ease-out;
+}
+
+.upcoming-subheading {
+    font-size: 2.2rem;
+    color: var(--logo-blue1);
+    margin-bottom: 20px;
+    font-weight: 500;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.upcoming-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: fadeInLeft 1.5s ease-out;
+    padding: 2rem;
 }
 
 .upcoming-content {
     max-width: 50%;
-}
-
-.upcoming-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: black;
-}
-
-.upcoming-content .highlight {
-    color: #4caf50;
-    /* Green highlight for "succeed" */
-    background-color: #e8f5e9;
-    /* Light green background */
-    padding: 0 5px;
+    text-align: left;
+    animation: fadeInUp 1.8s ease-out;
 }
 
 .upcoming-text {
-    padding: 2px 0px 24px 0px;
-    margin: 2px;
-    text-align: justify;
-    color: rgb(85, 85, 85);
+    font-size: 1.1rem;
     line-height: 1.5;
+    color: rgb(0, 0, 0);
+    padding-bottom: 24px;
+    text-align: justify;
+}
+
+.upcoming-image-wrapper {
+    max-width: 45%;
+    max-height: min-content;
+    display: flex;
+    justify-content: center;
+    animation: fadeInRight 1.5s ease-out;
+}
+
+.upcoming-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.upcoming-button-wrapper {
+    text-align: center;
+    animation: slideUp 2s ease-out;
+    height: 5rem;
 }
 
 .upcoming-button {
-    align-items: center;
+    display: inline-block;
 }
 
 .upcoming-cta-button {
@@ -685,102 +824,156 @@ main {
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
 
 .upcoming-cta-button:hover {
     background-color: var(--logo-blue1);
+    transform: scale(1.1);
+    border-radius: 20px;
 }
 
-.upcoming-image {
-    position: relative;
-    max-width: 45%;
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.upcoming-img {
-    width: 100%;
-    border-radius: 10px;
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* MEDIA QUERIES */
 
 /* For smaller screens (up to 768px), stack the content and adjust sizes */
 @media (max-width: 768px) {
+    .upcoming-subheading {
+        font-size: 1rem;
+    }
+
     .upcoming-section {
+        padding: 30px;
+    }
+
+    .upcoming-content-wrapper {
         flex-direction: column;
-        /* Stack content vertically */
-        padding: 20px;
+        /* Stack the content and image vertically */
         align-items: center;
-        /* Reduce padding for smaller screens */
     }
 
     .upcoming-content {
         max-width: 100%;
-        /* Make content take full width */
+        text-align: center;
         margin-bottom: 20px;
-        /* Add space between content and image */
     }
 
+    .upcoming-image-wrapper {
+        max-width: 100%;
+        margin-top: 20px;
+    }
 
     .upcoming-text {
-        font-size: 1.2rem;
-        /* Slightly smaller text size */
-        margin-bottom: 15px;
-        /* Reduced margin */
+        font-size: 0.9rem;
     }
 
     .upcoming-cta-button {
-        padding: 12px 25px;
-        /* Adjust button padding */
-        font-size: 1.4rem;
-        /* Increase button text size */
-    }
-
-    .upcoming-image {
-        max-width: 100%;
-        /* Image takes full width on smaller screens */
-        margin-top: 20px;
-        /* Space between content and image */
-    }
-
-    .upcoming-img {
-        border-radius: 5px;
-        /* Slightly reduce border-radius */
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }
 
 /* For very small screens (below 480px), further reduce sizes */
 @media (max-width: 480px) {
     .upcoming-section {
-        padding: 10px;
-        display: flex;
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .upcoming-content-wrapper {
         flex-direction: column;
-        justify-content: center;
-        /* Further reduce padding */
-    }
-
-    .upcoming-text {
-        font-size: 0.8rem;
-        /* Even smaller description font size */
-    }
-
-    .upcoming-button {
-        display: flex;
-        justify-content: center;
         align-items: center;
     }
 
-    .upcoming-cta-button {
-        padding: 10px 15px;
-        /* Smaller button padding */
-        font-size: 1.2rem;
-        /* Slightly smaller button text */
+    .upcoming-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
     }
 
-    .upcoming-img {
-        border-radius: 3px;
-        /* Reduce border radius even more */
+    .upcoming-image-wrapper {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .upcoming-text {
+        font-size: 0.7rem;
+        /* padding: 2px 2px 2px 2px; */
+    }
+
+    .upcoming-cta-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 }
+
+
 
 /* cards */
 .card-section p,
@@ -861,7 +1054,7 @@ main {
             rgba(0, 0, 0, 0) 0%,
             rgba(0, 0, 0, 0.3) 10%,
             #000000 100%);
-    height: 58%;
+    height: max-content;
     box-sizing: border-box;
 }
 
@@ -881,27 +1074,26 @@ main {
 
 .card-container .card__button {
     display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease 0s;
     padding: 0.75em 1.6em;
     width: fit-content;
     font-weight: 600;
     border-radius: 0.45em;
     border: none;
     background-color: var(--logo-green1);
+    font-family: inherit;
 }
 
-.card-container .card__button:hover{
+.card-container .card__button:hover {
     background-color: var(--logo-blue6);
 }
 
-.card__button a{
+.card__button a {
     text-decoration: none;
     color: white;
 }
+
 .card__button a:hover {
     text-decoration: none;
 }
@@ -983,7 +1175,6 @@ main {
 }
 
 /* MEDIA QUERIES */
-/* MEDIA QUERIES */
 
 /* For smaller screens, stack the cards in a column */
 @media (max-width: 768px) {
@@ -1004,7 +1195,8 @@ main {
     .card__content {
         display: flex;
         flex-direction: column;
-        padding: 1rem 1rem 2rem; /* Adjusted padding for better spacing */
+        padding: 1rem 1rem 2rem;
+        /* Adjusted padding for better spacing */
         justify-content: space-between;
     }
 
@@ -1025,16 +1217,23 @@ main {
 }
 
 @media (max-width: 480px) {
+
     .card-container .card__title {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
     }
 
-    .card-container p {
-        font-size: 0.9rem;
+    /* .card-container p {
+        font-size: 0.5rem;
+    } */
+
+    .card-section .card__button {
+        scale: 80%;
     }
 
-    .card__button {
-        font-size: 0.9rem;
+    .card-section .card__description {
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
     }
 
     .card-section .card__content {
@@ -1261,6 +1460,25 @@ main {
     }
 }
 
+@media (max-width: 480px) {
+    .testimonial {
+        line-height: 1.5;
+        text-align: justify;
+        margin: 1rem;
+        font-size: 0.7rem;
+    }
+    .user .username {
+        margin-left: 8px;
+        font-size: 0.7rem;
+    }
+
+    .user .role{
+        font-size: 0.6rem;
+    }
+}
+
+
+
 /* Footer */
 /* Main Footer Section */
 footer {
@@ -1364,7 +1582,7 @@ footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 2rem;
+        /* gap: 2rem; */
         /* Increased gap for better spacing */
     }
 
@@ -1375,5 +1593,30 @@ footer {
     .social_icons {
         margin-top: 1.5rem;
         /* Additional space for small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer .h3{
+        font-size: 0.9rem;
+    }
+
+    footer p{
+        font-size: 0.7rem;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1px;
+    }
+
+    .main-footer .flex-content{
+        margin-bottom: 0.2rem;
+    }
+
+    .main-footer{
+        margin-bottom: 0.1rem;
     }
 }
