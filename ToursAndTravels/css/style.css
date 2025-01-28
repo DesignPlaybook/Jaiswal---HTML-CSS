@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap");
+
+/* @font-face {
+  font-family: 'YourFontName'; 
+  src: url('fonts/yourfontfile.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+   */
 
 html,
 body {
@@ -64,6 +73,13 @@ body {
             var(--logo-blue5),
             var(--logo-blue6));
 
+    --logo-gradient2: linear-gradient(45deg,
+            var(--logo-blue6),
+            var(--logo-blue4),
+            var(--logo-green1),
+            var(--logo-orange),
+            var(--logo-red));
+
 }
 
 .header {
@@ -81,8 +97,16 @@ body {
 h1 {
     font-weight: 600;
     font-size: 2.5rem;
-    color: black;
+    background: black;
+    /* Apply the gradient as the background */
+    -webkit-background-clip: text;
+    /* Make the gradient clip to the text */
+    color: transparent;
+    /* Make the text color transparent so the gradient is visible */
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
 }
+
 
 
 [type="checkbox"]:checked,
@@ -374,11 +398,6 @@ h1 {
 
     h1 {
         font-size: 1.5rem;
-        /* -webkit-text-stroke: 2px transparent;
-        text-stroke: 2px transparent;
-        -webkit-text-fill-color: black;
-        text-fill-color: black; */
-        color: black;
     }
 
 
@@ -608,26 +627,30 @@ main {
         opacity: 0;
     }
 
-    .content-small{
+    .content-small {
         display: block;
         margin-bottom: 2rem;
     }
+
     .content-small .button-group {
         font-size: smaller;
         font-family: inherit;
         /* margin-left: 1rem; */
-        flex-direction: row; /* Stack buttons vertically on small screens */
-        gap: 5px; /* Add spacing between buttons */
+        flex-direction: row;
+        /* Stack buttons vertically on small screens */
+        gap: 5px;
+        /* Add spacing between buttons */
     }
 }
+
 .content-small {
-    display: none; /* Hidden by default */
-    background-color: #ffffff; /* Light background for visibility */
+    display: none;
+    background-color: #ffffff;
     padding: 1.5rem;
-    border-radius: 10px 10px 20px 20px; /* 10px radius for top corners, 20px for bottom corners */
-    margin: 16px auto;
+    border-radius: 10px 10px 20px 20px;
+    margin: 0 2px 0 2px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .content-small .title {
@@ -645,15 +668,19 @@ main {
 .content-small .button-group {
     display: flex;
     flex-direction: row;
-    gap: 12px; /* Add spacing between buttons */
-    justify-content: center; /* Center align the buttons */
-    align-items: center; /* Align buttons vertically */
+    gap: 12px;
+    /* Add spacing between buttons */
+    justify-content: center;
+    /* Center align the buttons */
+    align-items: center;
+    /* Align buttons vertically */
 }
 
 .content-small button {
     display: inline-block;
     background-color: transparent;
-    border: 2px solid transparent; /* Removed unnecessary border */
+    border: 2px solid transparent;
+    /* Removed unnecessary border */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s;
@@ -663,16 +690,20 @@ main {
     text-decoration: none;
     color: #fff;
     background-color: var(--logo-blue6);
-    padding: 10px 20px; /* Proper padding for button text */
+    padding: 10px 20px;
+    /* Proper padding for button text */
     border-radius: 8px;
     font-weight: bold;
     font-size: 1rem;
-    display: inline-block; /* Ensures proper alignment */
+    display: inline-block;
+    /* Ensures proper alignment */
 }
 
 .content-small button a:hover {
-    background-color: var(--logo-blue1); /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: var(--logo-blue1);
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the button on hover */
 }
 
 
@@ -714,16 +745,18 @@ main {
         display: none;
     }
 
-    .content-small{
+    .content-small {
         display: block;
-        margin-bottom: 2rem;
     }
+
     .content-small .button-group {
         font-size: smaller;
         font-family: inherit;
         /* margin-left: 1rem; */
-        flex-direction: row; /* Stack buttons vertically on small screens */
-        gap: 5px; /* Add spacing between buttons */
+        flex-direction: row;
+        /* Stack buttons vertically on small screens */
+        gap: 5px;
+        /* Add spacing between buttons */
     }
 
     .content-small .description {
@@ -762,7 +795,7 @@ main {
 
 .upcoming-subheading {
     font-size: 2.2rem;
-    color: var(--logo-blue1);
+    color: var(--logo-blue2);
     margin-bottom: 20px;
     font-weight: 500;
     animation: fadeInUp 1.5s ease-out;
@@ -809,29 +842,39 @@ main {
     text-align: center;
     animation: slideUp 2s ease-out;
     height: 5rem;
+    display: inline-block;
+    /* Ensures it scales with the button */
+    transition: transform 0.3s;
+    /* Smooth transition for the wrapper */
 }
 
 .upcoming-button {
     display: inline-block;
+    margin: 0;
 }
 
 .upcoming-cta-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--logo-blue6);
+    background-color: var(--logo-green1);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s;
-    font-size: 1.5rem;
-    padding: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transition for both background and scaling */
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+.upcoming-button-wrapper:hover {
+    transform: scale(1.1);
+    /* Scale the wrapper along with the button */
 }
 
 .upcoming-cta-button:hover {
-    background-color: var(--logo-blue1);
-    transform: scale(1.1);
-    border-radius: 20px;
+    background-color: var(--logo-blue6);
+    border-radius: 5px;
+    /* Keep the border-radius consistent */
 }
 
 /* Keyframe Animations */
@@ -1467,12 +1510,13 @@ main {
         margin: 1rem;
         font-size: 0.7rem;
     }
+
     .user .username {
         margin-left: 8px;
         font-size: 0.7rem;
     }
 
-    .user .role{
+    .user .role {
         font-size: 0.6rem;
     }
 }
@@ -1597,11 +1641,11 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    footer .h3{
+    footer .h3 {
         font-size: 0.9rem;
     }
 
-    footer p{
+    footer p {
         font-size: 0.7rem;
     }
 
@@ -1612,11 +1656,11 @@ footer {
         gap: 1px;
     }
 
-    .main-footer .flex-content{
+    .main-footer .flex-content {
         margin-bottom: 0.2rem;
     }
 
-    .main-footer{
+    .main-footer {
         margin-bottom: 0.1rem;
     }
 }
