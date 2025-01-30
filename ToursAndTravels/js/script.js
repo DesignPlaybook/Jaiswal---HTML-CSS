@@ -1,76 +1,76 @@
-// Main Slider Logic
-const mainSlider = document.querySelector('.slider');
-const items = Array.from(document.querySelectorAll('.item'));
-let autoSlideInterval;
+// // Main Slider Logic
+// const mainSlider = document.querySelector('.slider');
+// const items = Array.from(document.querySelectorAll('.item'));
+// let autoSlideInterval;
 
-// Function to move items to the right with smooth transitions
-function moveItemsToRight() {
-  // Add 'hidden' class to the first item and shift it
-  items[0].classList.add('hidden');
-  // Move the first item to the end of the slider
-  mainSlider.append(items[0]);
+// // Function to move items to the right with smooth transitions
+// function moveItemsToRight() {
+//   // Add 'hidden' class to the first item and shift it
+//   items[0].classList.add('hidden');
+//   // Move the first item to the end of the slider
+//   mainSlider.append(items[0]);
 
-  // Wait for the transition to finish before updating the array
-  setTimeout(() => {
-    items.push(items.shift()); // Update the array
-    items[items.length - 1].classList.remove('hidden');
-    items[items.length - 1].classList.add('show');
-  }, 750); // Match the duration of the transition
+//   // Wait for the transition to finish before updating the array
+//   setTimeout(() => {
+//     items.push(items.shift()); // Update the array
+//     items[items.length - 1].classList.remove('hidden');
+//     items[items.length - 1].classList.add('show');
+//   }, 750); // Match the duration of the transition
 
-  // Reset the auto-slide interval after the transition
-  resetAutoSlide();
-}
+//   // Reset the auto-slide interval after the transition
+//   resetAutoSlide();
+// }
 
-// Function to move items to the left with smooth transitions
-function moveItemsToLeft() {
-  // Add 'hidden' class to the last item and shift it to the front
-  items[items.length - 1].classList.add('hidden');
-  mainSlider.prepend(items[items.length - 1]);
+// // Function to move items to the left with smooth transitions
+// function moveItemsToLeft() {
+//   // Add 'hidden' class to the last item and shift it to the front
+//   items[items.length - 1].classList.add('hidden');
+//   mainSlider.prepend(items[items.length - 1]);
 
-  // Wait for the transition to finish before updating the array
-  setTimeout(() => {
-    items.unshift(items.pop()); // Update the array
-    items[0].classList.remove('hidden');
-    items[0].classList.add('show');
-  }, 750); // Match the duration of the transition
+//   // Wait for the transition to finish before updating the array
+//   setTimeout(() => {
+//     items.unshift(items.pop()); // Update the array
+//     items[0].classList.remove('hidden');
+//     items[0].classList.add('show');
+//   }, 750); // Match the duration of the transition
 
-  // Reset the auto-slide interval after the transition
-  resetAutoSlide();
-}
+//   // Reset the auto-slide interval after the transition
+//   resetAutoSlide();
+// }
 
-// Arrow click event listener
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.next')) {
-    moveItemsToRight();
-  }
-  if (e.target.closest('.prev')) {
-    moveItemsToLeft();
-  }
-}, false);
+// // Arrow click event listener
+// document.addEventListener('click', (e) => {
+//   if (e.target.closest('.next')) {
+//     moveItemsToRight();
+//   }
+//   if (e.target.closest('.prev')) {
+//     moveItemsToLeft();
+//   }
+// }, false);
 
-// Auto-slide functionality (moves items automatically)
-function startAutoSlide() {
-  autoSlideInterval = setInterval(() => {
-    moveItemsToRight();  // Automatically move items to the right every 3 seconds
-  }, 3000); // Set the interval for auto-slide (adjust time as needed)
-}
+// // Auto-slide functionality (moves items automatically)
+// function startAutoSlide() {
+//   autoSlideInterval = setInterval(() => {
+//     moveItemsToRight();  // Automatically move items to the right every 3 seconds
+//   }, 3000); // Set the interval for auto-slide (adjust time as needed)
+// }
 
-// Stop auto-slide when hovering over the slider
-mainSlider.addEventListener('mouseenter', () => {
-  clearInterval(autoSlideInterval);  // Stop auto-slide when the user hovers over the slider
-});
+// // Stop auto-slide when hovering over the slider
+// mainSlider.addEventListener('mouseenter', () => {
+//   clearInterval(autoSlideInterval);  // Stop auto-slide when the user hovers over the slider
+// });
 
-// Restart auto-slide when mouse leaves the slider
-mainSlider.addEventListener('mouseleave', startAutoSlide);
+// // Restart auto-slide when mouse leaves the slider
+// mainSlider.addEventListener('mouseleave', startAutoSlide);
 
-// Reset and restart the auto-slide interval whenever an item is moved
-function resetAutoSlide() {
-  clearInterval(autoSlideInterval);  // Clear the current auto-slide interval
-  startAutoSlide();  // Start the auto-slide again after clearing
-}
+// // Reset and restart the auto-slide interval whenever an item is moved
+// function resetAutoSlide() {
+//   clearInterval(autoSlideInterval);  // Clear the current auto-slide interval
+//   startAutoSlide();  // Start the auto-slide again after clearing
+// }
 
-// Start auto-slide when the page loads
-startAutoSlide();
+// // Start auto-slide when the page loads
+// startAutoSlide();
 
 
 // Brand Slider Logic
