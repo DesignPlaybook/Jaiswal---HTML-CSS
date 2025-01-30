@@ -1,18 +1,24 @@
 const tourData = [
-    { title: "Europe", description: "Starting at ₹2,00,000 ", image: "../images/eiffel.jpg" },
-    { title: "Dubai", description: "Starting at ₹30,000 ", image: "../images/dubai.jpg" },
-    { title: "Thailand", description: "Starting at ₹20,000 ", image: "../images/thailand.jpg" },
-    { title: "Bali", description: "Starting at ₹35,000 ", image: "../images/bali.jpg" },
-    { title: "Vietnam", description: "Starting at ₹30,000 ", image: "../images/vietnam.jpg" },
-    { title: "Maldives", description: "Starting at ₹1,00,000 ", image: "../images/maldives.jpg" },
-    { title: "Singapore-Malaysia", description: "Starting at ₹45,000 ", image: "../images/singapore.jpg" },
-    { title: "London", description: "Starting at ₹80,000 ", image: "../images/london.jpg" },
-    { title: "Turkey", description: "Starting at ₹1,00,000 ", image: "../images/turkey.jpg" },
-    { title: "Baku", description: "Starting at ₹45,000 ", image: "../images/baku.png" },
-    { title: "South Africa", description: "Starting at ₹90,000 ", image: "../images/safrica.jpg" },
-    { title: "Australia", description: "Starting at ₹75,000 ", image: "../images/australia.jpg" },
-    { title: "Japan", description: "Starting at ₹1,50,000 ", image: "../images/japan.jpg" },
-    { title: "Cambodia", description: "Starting at ₹70,000 ", image: "../images/cambodia.jpg" },
+    { title: "Kerala ", description: "Starting at ₹12,500 ", image: "../images/kerala.jpg" },
+    { title: "Kashmir ", description: "Starting at ₹11,500 ", image: "../images/kashmir.jpg" },
+    { title: "Sikkim ", description: "Starting at ₹17,000 ", image: "../images/sikkim.jpg" },
+    { title: "Andaman-Nicobar", description: "Starting at ₹22,000 ", image: "../images/andaman.jpg" },
+    { title: "Goa ", description: "Starting at ₹8,000 ", image: "../images/goa.jpg" },
+    { title: "Ooty-Coorg", description: "Starting at ₹15,500 ", image: "../images/ooty-coorg.jpg" },
+    { title: "Himachal Pradesh ", description: "Starting at ₹30,000 ", image: "../images/himachal-pradesh.jpg" },
+    { title: "Shimla-Manali ", description: "Starting at ₹11,500 ", image: "../images/himachal.jpg" },
+    { title: "Rajasthan ", description: "Starting at ₹15,000 ", image: "../images/rajasthan.jpg" },
+    { title: "Uttarakhand", description: "Starting at ₹14,500 ", image: "../images/utknd.jpg" },
+    { title: "Golden Triangle", description: "Starting at ₹16,000 ", image: "../images/golden-triangle.png" },
+    { title: "Chardham", description: "Starting at ₹28,000 ", image: "../images/chardham.jpg" },
+    { title: "Mahabaleshwar", description: "Starting at ₹5,000 ", image: "../images/mahabaleshwar.jpg" },
+    { title: "Bhubaneshwar-Puri", description: "Starting at ₹11,000 ", image: "../images/bhubhaneshvar.jpg" },
+    { title: "Nepal", description: "Starting at ₹19,000 ", image: "../images/nepal.jpg" },
+    { title: "Lakshadweep", description: "Starting at ₹20,000 ", image: "../images/lakshadweep.jpg" },
+    { title: "Rameshwaram", description: "Starting at ₹12,000 ", image: "../images/rameshwaram.jpg" },
+    { title: "Gujarat", description: "Starting at ₹13,000 ", image: "../images/gujarat.jpg" },
+    { title: "Hyderabad", description: "Starting at ₹10,000 ", image: "../images/charminar.jpg" },
+    { title: "Jammu-Amritsar", description: "Starting at ₹11,500 ", image: "../images/jammu-amrit.jpg" },
 ];
 
 const tourPackagesContainer = document.getElementById("tourPackages");
@@ -35,12 +41,36 @@ tourData.forEach((tour, index) => {
             <p class="card-description">
                 ${descriptionText}<br><b class="cost">${cost}</b> per person
             </p>
-            <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank" class="card-button">Book Now</a>
+            <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="card-button">Book Now</a>
         </div>
     `;
 
     tourPackagesContainer.appendChild(card);
 });
+
+// Select all buttons with the class 'card-button'
+const cardButtons = document.querySelectorAll(".card-button");
+
+// Function to change background and hover color
+function changeButtonColors(backgroundColor, hoverColor) {
+    cardButtons.forEach((button) => {
+        // Set the background color directly
+        button.style.backgroundColor = backgroundColor;
+
+        // Set hover effect using CSS variables or custom style
+        button.addEventListener("mouseover", () => {
+            button.style.backgroundColor = hoverColor;
+        });
+
+        button.addEventListener("mouseout", () => {
+            button.style.backgroundColor = backgroundColor;
+        });
+    });
+}
+
+// Example usage:
+changeButtonColors("var(--logo-green1)", "var(--logo-blue6)");  // Change button color to orange and hover to dark red
+
 
 // Scroll animation logic
 const observeCards = () => {
