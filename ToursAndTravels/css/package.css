@@ -16,22 +16,42 @@
   --logo-gradient: linear-gradient(139deg, var(--logo-blue1), var(--logo-blue2), var(--logo-blue3), var(--logo-blue4), var(--logo-blue5), var(--logo-blue6));
 }
 
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#animate-area {
+  position: relative;
+  z-index: 10;
+  margin-top: 8rem;
+  height: 180px;
+  width: 100vw;
+  background-image: url(https://davidwalsh.name/demo/bg-clouds.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 40s linear infinite;
+}
+
 .container {
-  margin: 3rem auto;
+  margin: 0 4rem;
   max-width: 100%;
   padding: 20px;
   position: relative; /* Required for parallax effect */
   overflow: hidden;
 }
 
-.heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
 
-/* .heading h1 {
-  font-size: 2.5rem;
-} */
+#animate-area h1 {
+  text-align: center;
+  margin: 2rem;
+  color: white;
+}
 
 /* Parallax effect for the grid */
 .grid {
@@ -140,7 +160,7 @@
 .card-button {
   display: inline-block;
   text-decoration: none;
-  background: var(--logo-green1); /* Gradient button */
+  /* background: var(--logo-green1);  */
   color: #fff;
   padding: 10px 20px;
   border-radius: 4px;
@@ -152,7 +172,7 @@
 }
 
 .card-button:hover {
-  background: var(--logo-blue6);
+  /* background: var(--logo-blue6); */
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6); /* More prominent shadow */
 }
