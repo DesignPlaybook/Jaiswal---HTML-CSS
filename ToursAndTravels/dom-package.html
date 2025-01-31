@@ -7,37 +7,51 @@
   <title>Domestic Packages</title>
   <link rel="stylesheet" href="css/package.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-  <div class="header">
+  <!-- included nav -->
+  <nav>
     <div class="logo-div">
       <a href="#" class="logo" target="_blank">
         <img src="images/jaiswallogo.png" alt="">
       </a>
     </div>
 
-
-    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
-    <label for="menu-icon"></label>
-    <nav class="nav">
-      <ul class="pt-5">
+    <div class="navbar">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="dom-package.html">Domestic Packages</a></li>
-        <li><a href="int-package.html">International Packages</a></li>
+        <li class="packages-dropdown">
+          <a href="#">Packages</a>
+          <ul id="dropdown-menu">
+            <li><a href="dom-package.html">Domestic Packages</a></li>
+            <li><a href="int-package.html">International Packages</a></li>
+          </ul>
+        </li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </div>
-  <div class="container" style="margin-top: 8rem;">
-    <div class="heading">
-      <h1>Explore Our Tour Packages</h1>
+      <ul class="menu">
+        <li id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </li>
+      </ul>
     </div>
+  </nav>
 
+  <!-- animated heading -->
+  <div id="animate-area">
+    <h1>Explore Our Domestic Tour Packages</h1>
+  </div>
+  <div class="container">
     <div class="grid" id="tourPackages">
     </div>
   </div>
+
+  <!-- footer -->
   <footer>
     <!-- Main Footer Section -->
     <div class="main-footer">
