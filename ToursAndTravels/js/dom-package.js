@@ -39,9 +39,10 @@ tourData.forEach((tour, index) => {
         <div class="card-content">
             <h3 class="card-title">${tour.title}</h3>
             <p class="card-description">
-                ${descriptionText}<br><b class="cost">${cost}</b> per person
+                ${descriptionText}<br><b class="cost">${cost}<br></b>
+                <span class="star">*</span>T&C apply
             </p>
-            <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="card-button">Book Now</a>
+            <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank" class="card-button">Book Now</a>
         </div>
     `;
 
