@@ -33,7 +33,8 @@ tourData.forEach((tour, index) => {
         <div class="card-content">
             <h3 class="card-title">${tour.title}</h3>
             <p class="card-description">
-                ${descriptionText}<br><b class="cost">${cost}</b> per person
+                ${descriptionText}<br><b class="cost">${cost}<br></b>
+                <span class="star">*</span>T&C apply
             </p>
             <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank" class="card-button">Book Now</a>
         </div>
@@ -41,6 +42,7 @@ tourData.forEach((tour, index) => {
 
     tourPackagesContainer.appendChild(card);
 });
+
 // Select all buttons with the class 'card-button'
 const cardButtons = document.querySelectorAll(".card-button");
 
@@ -62,7 +64,7 @@ function changeButtonColors(backgroundColor, hoverColor) {
 }
 
 // Example usage:
-changeButtonColors("var(--logo-blue6)", "var(--logo-green1)");  // Change button color to orange and hover to dark red
+changeButtonColors("var(--logo-blue6)", "var(--logo-green1)");  // Change button color to blue and hover to green
 
 
 // Scroll animation logic
