@@ -256,7 +256,7 @@ nav .navbar ul {
 /* Show dropdown on hover */
 .packages-dropdown:hover #dropdown-menu {
     display: block;
-    width: max-content;
+    width: min-content;
 }
 
 nav .logo-div {
@@ -642,8 +642,9 @@ main article {
 
 .packages-dropdown:hover #dropdown-menu {
     display: block;
-    scale: 50%; 
-    left: -80px;
+    scale: 50%;
+    left: -35px;
+    top: -17px;
 }
 
 .packages-dropdown{
