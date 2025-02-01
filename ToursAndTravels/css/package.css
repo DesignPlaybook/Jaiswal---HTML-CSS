@@ -39,9 +39,9 @@
 }
 
 .container {
-  margin: 1rem 2rem;
+  margin: 1rem 1rem;
   max-width: 100%;
-  padding: 20px;
+  padding: 10px;
   position: relative; /* Required for parallax effect */
   overflow: hidden;
 }
@@ -56,8 +56,7 @@
 /* Parallax effect for the grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(416px, 1fr));
   transform: translateY(0);
   will-change: transform;
   transition: transform 0.2s ease-out;
@@ -126,7 +125,7 @@
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--logo-blue1); /* Darker shade for better readability */
   margin-bottom: 10px;
@@ -136,7 +135,7 @@
 }
 
 .card-title:hover {
-  color: var(--logo-orange); /* Highlight title on hover */
+  color: var(--logo-green1); /* Highlight title on hover */
 }
 
 .card-description {
@@ -155,7 +154,15 @@
   margin-top: 10px; /* Adds a bit of space between the description and the cost */
 }
 
+/* Style for the red and bigger star */
+.star {
+  color: var(--logo-red);
+  font-size: 1.2em; /* Make the star larger */
+}
 
+.card-content span{
+  font-size: 1rem;
+}
 
 .card-button {
   display: inline-block;
