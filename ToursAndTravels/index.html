@@ -2,234 +2,434 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!--FONT AWESOME-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Font Awesome CDN Link -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
 
-    <!--GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Link to the favicon -->
-    <link rel="icon" href="images/jaiswallogo.png" type="image/x-icon">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@100;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/jaiswallogo.ico" type="image/x-icon">
+  <link rel="icon" href="images/jaiswallogo.png" type="image/png">
+  <link rel="icon" href="images/jaiswallogo.svg" type="image/svg+xml">
+
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 </head>
 
 <body>
 
-    <!-- included header -->
-    <iframe src="header.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+  <!-- HEADER FROM HEADER PAGE -->
+  <div class="page-wrap">
+    <header class="page-header">
 
-    <!-- for smaller screens only -->
-    <div class="content-small">
-        <h1 class="title">Explore Your Next Destination</h1>
-        <p class="description">
-            Whether you're planning a relaxing domestic getaway or an adventurous international journey, we’ve got you
-            covered. Let us help make your travel dreams a reality!
+      <nav>
+        <div class="logo-div">
+          <a href="#" class="logo" target="_blank">
+            <img src="images/jaiswallogo.png" alt="">
+          </a>
+        </div>
+
+        <div class="navbar">
+          <ul class="nav-links">
+            <li class="packages-dropdown">
+              <a href="#"> Packages <i class="fas fa-caret-down"></i></a>
+              <ul id="dropdown-menu">
+                <li><a href="dom-package.html" target="_top">Domestic Packages</a></li>
+                <li><a href="int-package.html" target="_top">International Packages</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html" target="_top">Home</a></li>
+            <!-- <li><a href="#">About</a></li> -->
+            <!-- <li><a href="contact.html" target="_top">Contact</a></li> -->
+          </ul>
+          <ul class="menu">
+            <li id="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main>
+        <article id="hero-1" style="--i: 5">
+          <div class="hero-info">
+            <h2>Experience</h2>
+            <h1>Kashmir</h1>
+            <!-- <h3>Pragser Wildsee, Italy</h3> -->
+          </div>
+          <div class="hero-image hi-1"></div>
+        </article>
+
+        <article id="hero-2" style="--i: 4">
+          <div class="hero-info">
+            <h2>Revel in</h2>
+            <h1>Maldives</h1>
+            <!-- <h3>Kashmir, India</h3> -->
+          </div>
+          <div class="hero-image hi-2"></div>
+        </article>
+
+        <article id="hero-3" style="--i: 3">
+          <div class="hero-info">
+            <h2>Explore</h2>
+            <h1>Manali</h1>
+            <!-- <h3>Hooker Valley Track, New Zealand</h3> -->
+          </div>
+          <div class="hero-image hi-3"></div>
+        </article>
+
+        <article id="hero-4" style="--i: 2">
+          <div class="hero-info">
+            <h2>Explore</h2>
+            <h1>Japan</h1>
+            <!-- <h3>Himachal Pradesh, India</h3> -->
+          </div>
+          <div class="hero-image hi-4"></div>
+        </article>
+
+        <article id="hero-5" style="--i: 1">
+          <div class="hero-info">
+            <h2>Visit</h2>
+            <h1>Uttara khand</h1>
+            <!-- <h3>Bangkok, Thailand</h3> -->
+          </div>
+          <div class="hero-image hi-5"></div>
+        </article>
+
+        <article id="hero-6" style="--i: 0">
+          <div class="hero-info">
+            <h2>Venture into</h2>
+            <h1>South Africa</h1>
+            <!-- <h3>Kerala, India</h3> -->
+          </div>
+          <div class="hero-image hi-6"></div>
+        </article>
+      </main>
+
+
+    </header>
+
+    <section id="full-menu">
+      <!-- <ul class="nav-links">
+        <button><a href="index.html" target="_top"> Back Home</a></button>
+        </ul> -->
+      <ul class="level-1">
+        <li>
+          <h3>Destinations</h3>
+          <ul class="level-2">
+            <li>
+              <p><a href="dom-package.html">India (Domestic Tour)</a></p>
+              <ul class="level-3">
+                <li>Himachal Pradesh</li>
+                <li>Shimla-Manali</li>
+                <li>Rajasthan</li>
+                <li>Kerala</li>
+                <li>Kashmir</li>
+                <li>Sikkim</li>
+                <li>Ooty-Coorg</li>
+                <li>Goa</li>
+                <li>Uttarakhand</li>
+                <li>Golden Triangle</li>
+                <li>Chardham</li>
+                <li>Mahabaleshwar</li>
+                <li>Bhubaneshwar-Puri</li>
+                <li>Nepal</li>
+                <li>Andaman-Nicobar</li>
+                <li>Lakshadweep</li>
+                <li>Rameshwaram</li>
+                <li>Gujarat</li>
+                <li>Hyderabad</li>
+                <li>Jammu-Amritsar</li>
+
+              </ul>
+            </li>
+            <li>
+              <p><a href="int-package.html">International</a></p>
+              <ul class="level-3">
+                <li>Europe</li>
+                <li>Dubai</li>
+                <li>Thailand</li>
+                <li>Bali</li>
+                <li>Vietnam</li>
+                <li>Maldives</li>
+                <li>Singapore-Malaysia</li>
+                <li>London</li>
+                <li>Turkey</li>
+                <li>Baku</li>
+                <li>South Africa</li>
+                <li>Austria</li>
+                <li>Japan</li>
+                <li>Cambodia</li>
+              </ul>
+            </li>
+            <!-- <li>
+                        <p>Africa</p>
+                        <ul class="level-3">
+                            <li>Egypt</li>
+                            <li>Maurtius</li>
+                            <li>Morocco</li>
+                        </ul>
+                    </li> -->
+            <!-- <li>
+                        <p>Middle East</p>
+                        <ul class="level-3">
+                            <li>Egypt</li>
+                            <li>Jordan</li>
+                            <li>Oman</li>
+                            <li>Turkey</li>
+                        </ul>
+                    </li> -->
+          </ul>
+        </li>
+        <!-- <li>
+                <h3>Travel Tips</h3>
+                <ul>
+                    <li>Going on a trip</li>
+                    <li>Travel Insurance</li>
+                    <li>Working abroad</li>
+                    <li>Saving</li>
+                    <li>Instagram tips</li>
+                </ul>
+                <p><small>More tips...</small></p>
+            </li>
+            <li>
+                <h3>Resources</h3>
+                <ul>
+                    <li>Personalised travel advice</li>
+                    <li>Where we book our travels</li>
+                    <li>Become a booking agent</li>
+                </ul>
+                <p><small>More resources...</small></p>
+            </li>
+            <li> -->
+        <!-- <h3>About Us</h3>
+                <ul>
+                    <li>Our story</li>
+                    <li>Work with us</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </li> -->
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- REMAINING SECTIONS FROM MAIN PAGE -->
+
+  <div class="content-small">
+    <h1 class="title">Explore Your Next Destination</h1>
+    <p class="description">Whether you're planning a relaxing domestic getaway or an adventurous international journey,
+      we’ve got you covered.</p>
+    <div class="button-group">
+      <button class="read-more"><a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Book Domestic</a></button>
+      <button class="read-more"><a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">Book
+          International</a></button>
+    </div>
+  </div>
+
+  <!-- Upcoming Event Section -->
+  <section class="upcoming-section">
+    <h1 class="upcoming-heading">Upcoming Event</h1>
+    <h2 class="upcoming-subheading">Prayagraj - Mahakumbh Mela</h2>
+    <div class="upcoming-content-wrapper">
+      <div class="upcoming-content">
+        <p class="upcoming-text">
+          Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to
+          Prayagraj!
+          Renowned for its cultural richness and divine significance, Prayagraj is home to the iconic Triveni
+          Sangam, the confluence of the Ganga, Yamuna, and the mystical Saraswati rivers. This thoughtfully
+          curated trip offers an opportunity to explore the city's historic landmarks, including the majestic
+          Allahabad Fort, Anand Bhavan, and serene ghats. Witness the timeless rituals performed at the Sangam
+          and
+          soak in the vibrant local culture. Whether you’re a history enthusiast, a spiritual seeker, or
+          simply
+          looking to experience the beauty of India’s heritage, this trip promises a truly enriching
+          experience.
+          Join us for this soulful adventure and create memories to cherish forever!
         </p>
-        <div class="button-group">
-            <button class="read-more">
-                <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Book Domestic</a>
-            </button>
-            <button class="read-more">
-                <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">Book International</a>
-            </button>
+      </div>
+
+      <div class="upcoming-image-wrapper">
+        <div class="upcoming-img" loading="lazy">
+          <img src="images/prayagraj.jpg" alt="Prayagraj Image" class="upcoming-img" />
         </div>
+      </div>
     </div>
 
+    <div class="upcoming-button-wrapper">
+      <div class="upcoming-button">
+        <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="upcoming-cta-button">Book Now</a>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Upcoming section -->
-    <section class="upcoming-section">
-        <h1 class="upcoming-heading">Upcoming Event</h1>
-        <h2 class="upcoming-subheading">Prayagraj - Mahakumbh Mela</h2>
-        <div class="upcoming-content-wrapper">
-            <div class="upcoming-content">
-                <p class="upcoming-text">
-                    Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to
-                    Prayagraj!
-                    Renowned for its cultural richness and divine significance, Prayagraj is home to the iconic Triveni
-                    Sangam, the confluence of the Ganga, Yamuna, and the mystical Saraswati rivers. This thoughtfully
-                    curated trip offers an opportunity to explore the city's historic landmarks, including the majestic
-                    Allahabad Fort, Anand Bhavan, and serene ghats. Witness the timeless rituals performed at the Sangam
-                    and
-                    soak in the vibrant local culture. Whether you’re a history enthusiast, a spiritual seeker, or
-                    simply
-                    looking to experience the beauty of India’s heritage, this trip promises a truly enriching
-                    experience.
-                    Join us for this soulful adventure and create memories to cherish forever!
-                </p>
-            </div>
-
-            <div class="upcoming-image-wrapper">
-                <div class="upcoming-img" loading="lazy">
-                    <img src="images/prayagraj.jpg" alt="Prayagraj Image" class="upcoming-img" />
-                </div>
-            </div>
+  <!-- brands -->
+  <section id="brands">
+    <h1>Tie-ups</h1>
+    <div class="brand-container">
+      <div class="brand-slider">
+        <div class="brand-slide-track">
+          <div class="brand-slide">
+            <img src="images/tajlogo.png" height="100" width="auto" alt="Taj Hotel" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/lalitlogo.png" height="100" width="auto" alt="Lalit Hotel" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/sarover.png" height="100" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/renestlogo.png" height="100" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/novotellogo.jpg" height="100" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Lords-Hotels-and-Resorts.png" height="100" width="auto" padding="2px" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Lemon_Tree_Hotels_Logo.png" height="100" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Clarks_Inn.webp" height="100" width="auto" alt="" />
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="upcoming-button-wrapper">
-            <div class="upcoming-button">
-                <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="upcoming-cta-button">Book Now</a>
-            </div>
+  <!-- Cards -->
+  <div class="card-section">
+    <div class="card-title">
+      <h1>Packages</h1>
+    </div>
+    <div class="card-container">
+      <!-- Domestic Package Card -->
+      <article class="card | domestic-card">
+        <div class="card__content | domestic-content">
+          <div class="card__content--container | domestic-container">
+            <h2 class="card__title">Domestic</h2>
+            <p class="card__description">
+              Explore the beauty of India with our exclusive domestic travel packages. From the serene
+              hills of Himachal Pradesh to the sandy beaches of Goa, discover destinations that capture
+              the heart of India.
+            </p>
+          </div>
+          <button class="card__button"><a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Contact
+              Us</a></button>
         </div>
-    </section>
+      </article>
 
-    <!-- brands -->
-    <section id="brands">
-        <h1>Tie-ups</h1>
-        <div class="brand-container">
-            <div class="brand-slider">
-                <div class="brand-slide-track">
-                    <div class="brand-slide">
-                        <img src="images/tajlogo.png" height="100" width="auto" alt="Taj Hotel" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/lalitlogo.png" height="100" width="auto" alt="Lalit Hotel" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/sarover.png" height="100" width="auto" alt="" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/renestlogo.png" height="100" width="auto" alt="" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/novotellogo.jpg" height="100" width="auto" alt="" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/Lords-Hotels-and-Resorts.png" height="100" width="auto" padding="2px" alt="" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/Lemon_Tree_Hotels_Logo.png" height="100" width="auto" alt="" />
-                    </div>
-                    <div class="brand-slide">
-                        <img src="images/Clarks_Inn.webp" height="100" width="auto" alt="" />
-                    </div>
-                </div>
-            </div>
+      <!-- International Package Card -->
+      <article class="card | international-card">
+        <div class="card__content | international-content">
+          <div class="card__content--container | international-container">
+            <h2 class="card__title">International</h2>
+            <p class="card__description">
+              Embark on a global adventure with our international travel packages. Wander through the
+              historic streets of Europe, bask in the vibrant culture of Japan, or marvel at the stunning
+              landscapes of Turkey. Your dream destination awaits!
+            </p>
+          </div>
+          <button class="card__button"><a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">Contact
+              Us</a></button>
         </div>
-    </section>
+      </article>
 
-    <!-- Cards -->
-    <div class="card-section">
-        <div class="card-title">
-            <h1>Packages</h1>
+      <div class="filler"></div>
+    </div>
+  </div>
+
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h1>Testimonials</h1>
+    <div class="testimonial-container">
+      <div class="progress-bar"></div>
+      <div class="fas fa-quote-right fa-quote"></div>
+      <div class="fas fa-quote-left fa-quote"></div>
+      <p class="testimonial">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia repellendus, vitae
+        suscipit culpa molestiae possimus voluptate consequuntur odit nulla saepe obcaecati dolorem laudantium
+        praesentium aspernatur mollitia aperiam laborum rem cum commodi doloremque asperiores officia hic
+        similique. Sint ad nobis quos?</p>
+      <div class="user">
+        <!--     <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image"> -->
+        <div class="user-details">
+          <h4 class="username">Lola Smith</h4>
+          <p class="role">Marketing</p>
         </div>
-        <div class="card-container">
-            <!-- Domestic Package Card -->
-            <article class="card | domestic-card">
-                <div class="card__content | domestic-content">
-                    <div class="card__content--container | domestic-container">
-                        <h2 class="card__title">Domestic</h2>
-                        <p class="card__description">
-                            Explore the beauty of India with our exclusive domestic travel packages. From the serene
-                            hills of Himachal Pradesh to the sandy beaches of Goa, discover destinations that capture
-                            the heart of India.
-                        </p>
-                    </div>
-                    <button class="card__button"><a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Contact
-                            Us</a></button>
-                </div>
-            </article>
+      </div>
+    </div>
+  </section>
 
-            <!-- International Package Card -->
-            <article class="card | international-card">
-                <div class="card__content | international-content">
-                    <div class="card__content--container | international-container">
-                        <h2 class="card__title">International</h2>
-                        <p class="card__description">
-                            Embark on a global adventure with our international travel packages. Wander through the
-                            historic streets of Europe, bask in the vibrant culture of Japan, or marvel at the stunning
-                            landscapes of Turkey. Your dream destination awaits!
-                        </p>
-                    </div>
-                    <button class="card__button"><a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">Contact
-                            Us</a></button>
-                </div>
-            </article>
+  <!-- FOOTER -->
+  <footer>
+    <!-- Main Footer Section -->
+    <div class="main-footer">
+      <section class="flex-content padding_2x">
+        <h3 class="title small">Address</h3>
+        <p>
+          <strong>Mr. Adarsh Jaiswal</strong><br>
+          Jaiswal Holidays, D-76, Sector-17,<br>
+          Vashi Plaza, Vashi, Navi Mumbai-400703
+        </p>
+      </section>
+      <section class="flex-content padding_2x">
+        <h3 class="title small">Contact</h3>
+        <p>
+          Mobile: <a href="tel:+919372787566">9372787566</a> & <a href="tel:+918268860844">8268860844</a><br>
+          Email: <a href="mailto:adarsh.jaiswalholidays@gmail.com">adarsh.jaiswalholidays@gmail.com</a>
+        </p>
 
-            <div class="filler"></div>
+        <div class="social_icons">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <i class="fab fa-youtube"></i>
+          </a>
         </div>
+      </section>
+      <section class="flex-content padding_2x">
+        <h3 class="title small">Other Links</h3>
+        <div class="page-links">
+          <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">International Tour</a>
+          <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Domestic Tour</a>
+        </div>
+      </section>
     </div>
 
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <h1>Testimonials</h1>
-        <div class="testimonial-container">
-            <div class="progress-bar"></div>
-            <div class="fas fa-quote-right fa-quote"></div>
-            <div class="fas fa-quote-left fa-quote"></div>
-            <p class="testimonial">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia repellendus, vitae
-                suscipit culpa molestiae possimus voluptate consequuntur odit nulla saepe obcaecati dolorem laudantium
-                praesentium aspernatur mollitia aperiam laborum rem cum commodi doloremque asperiores officia hic
-                similique. Sint ad nobis quos?</p>
-            <div class="user">
-                <!--     <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image"> -->
-                <div class="user-details">
-                    <h4 class="username">Lola Smith</h4>
-                    <p class="role">Marketing</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <!-- Main Footer Section -->
-        <div class="main-footer">
-            <section class="flex-content padding_2x">
-                <h3 class="title small">Address</h3>
-                <p>
-                    <strong>Mr. Adarsh Jaiswal</strong><br>
-                    Jaiswal Holidays, D-76, Sector-17,<br>
-                    Vashi Plaza, Vashi, Navi Mumbai-400703
-                </p>
-            </section>
-            <section class="flex-content padding_2x">
-                <h3 class="title small">Contact</h3>
-                <p>
-                    Mobile: <a href="tel:+919372787566">9372787566</a> & <a href="tel:+918268860844">8268860844</a><br>
-                    Email: <a href="mailto:adarsh.jaiswalholidays@gmail.com">adarsh.jaiswalholidays@gmail.com</a>
-                </p>
-
-                <div class="social_icons">
-                    <a href="#" aria-label="Instagram" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" aria-label="Twitter" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" aria-label="YouTube" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </section>
-            <section class="flex-content padding_2x">
-                <h3 class="title small">Other Links</h3>
-                <div class="page-links">
-                    <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">International Tour</a>
-                    <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Domestic Tour</a>
-                </div>
-            </section>
-        </div>
-
-        <!-- Sub Footer -->
-        <div class="sub_footer">
-            <p>2025 &copy; All rights reserved by <strong>Design Playbook</strong></p>
-        </div>
-    </footer>
+    <!-- Sub Footer -->
+    <div class="sub_footer">
+      <p>2025 &copy; All rights reserved by <strong>Design Playbook</strong></p>
+    </div>
+  </footer>
 
 
-    <!-- <section class="flex-content padding_2x">
+  <!-- <section class="flex-content padding_2x">
         <h3 class="title small">Newsletter</h3>
         <p>Subscribe our newsletter to get our latest update & news</p>
         <fieldset class="flex">
@@ -237,11 +437,10 @@
             <button class="btn1 flex-content"><i class="fa fa-paper-plane"></i></button>
         </fieldset>
     </section> -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
