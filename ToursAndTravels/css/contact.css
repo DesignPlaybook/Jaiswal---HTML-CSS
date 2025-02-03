@@ -1,0 +1,297 @@
+/* @import url('http://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'); */
+:root {
+    scrollbar-width: none;
+    /* logo colours */
+    --logo-green1: #a8cf46;
+    --logo-green2: #ccc43c;
+    --logo-blue1: #4c548c;
+    --logo-blue2: #245c8c;
+    --logo-blue3: #3058a8;
+    --logo-blue4: #138ed4;
+    --logo-blue5: #138bd2;
+    --logo-blue6: #06a5e6;
+    --logo-brown: #913032;
+    --logo-orange: #f4b433;
+    --logo-red: #ed3237;
+    /* Gradient as a CSS variable for reusability */
+    --logo-gradient: linear-gradient(139deg, var(--logo-blue1), var(--logo-blue2), var(--logo-blue3), var(--logo-blue4), var(--logo-blue5), var(--logo-blue6));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.sliding-diagonals {
+    position: relative;
+    height: 30vh;
+    /* Reduced height */
+    overflow: hidden;
+    /* margin: 8rem auto; */
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #a8cf46 50%, #06a5e6 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: absolute;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg1 {
+    animation-duration: 3s;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.25em;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-title {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    height: 100%;             /* Take full height of the container */
+    text-align: center;       /* Ensures text alignment */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+
+/* Contact Section Styling */
+.contact-section {
+    width: 100%;
+    padding: 80px 10%;
+    background: linear-gradient(120deg, #f5f5f5, #e0e0e0);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Subtle Animation Background */
+/* Enhanced Floating Background Effect */
+.contact-section::before,
+.contact-section::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(6, 165, 230, 0.3), transparent);
+    border-radius: 50%;
+    animation: floatAnimation 6s infinite alternate ease-in-out, glowEffect 3s infinite ease-in-out;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* Left Floating Element */
+.contact-section::before {
+    top: 52px;
+    left: -50px;
+}
+
+/* Right Floating Element */
+.contact-section::after {
+    bottom: 80px; /* Adjusted for symmetry */
+    right: -50px;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(30px) translateX(20px);
+    }
+}
+
+/* Glow Effect */
+@keyframes glowEffect {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+/* Container */
+.contact-section .container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Heading Animations */
+.contact-heading h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    animation: slideIn 1.2s ease-in-out forwards;
+}
+
+.contact-heading p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: slideIn 1.4s ease-in-out forwards;
+}
+
+/* Form Styling */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+
+/* Input Animation */
+.input-group input,
+.contact-form input,
+.contact-form textarea {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+/* Delay animations for each input */
+.input-group input:nth-child(1) { animation-delay: 0.6s; }
+.input-group input:nth-child(2) { animation-delay: 0.8s; }
+.contact-form input:nth-of-type(1) { animation-delay: 1s; }
+.contact-form textarea { animation-delay: 1.2s; }
+button { animation-delay: 1.5s; }
+
+
+/* Input Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #06a5e6;
+    box-shadow: 0px 0px 10px rgba(6, 165, 230, 0.3);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Button Styling */
+button {
+    background: var(--logo-blue6);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: var(--logo-green1);
+    transform: scale(1.05);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
