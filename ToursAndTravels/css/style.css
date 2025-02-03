@@ -192,8 +192,6 @@ nav .navbar ul {
     transform: translateY(3px) scaleX(1.3);
 }
 
-
-
 .nav-links {
     display: flex;
     gap: 15px;
@@ -275,17 +273,6 @@ nav .logo-div .logo {
     height: 65px;
     width: auto;
     display: block;
-}
-
-@media screen and (max-width: 768px) {
-    .logo-div {
-        scale: 80%;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
 }
 
 
@@ -392,7 +379,7 @@ main article {
 /*  SECTION: Overlay Menu Section
 ----------------------------------------------- */
 #full-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
@@ -401,6 +388,14 @@ main article {
     background-color: var(--white);
     background-image: url("https://www.transparenttextures.com/patterns/church.png");
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+    /* Enable scrolling inside the menu */
+    overflow-y: visible !important;
+}
+
+
+#full-menu .nav-links {
+    display: none;
 }
 
 .level-1 {
@@ -487,52 +482,11 @@ main article {
     border-radius: 500px;
     margin-right: 10px;
     margin-bottom: 10px;
-    font-size: 1rem !important;
+    font-size: 1rem;
     cursor: pointer;
     color: var(--black);
 }
 
-
-@media screen and (max-width: 768px) {
-    nav {
-        padding: 1em;
-    }
-
-    #full-menu {
-        padding: 8em 2em 2em;
-    }
-
-    nav h1 {
-        font-size: 0.9rem;
-    }
-
-    .level-1 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .level-1 li {
-        grid-column: 1 / -1;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 900px) {
-    .content-small {
-        display: block;
-        margin-bottom: 2rem;
-    }
-
-    .content-small .button-group {
-        font-size: smaller;
-        font-family: inherit;
-        /* margin-left: 1rem; */
-        flex-direction: row;
-        /* Stack buttons vertically on small screens */
-        gap: 5px;
-        /* Add spacing between buttons */
-    }
-}
 
 .content-small {
     display: none;
@@ -597,69 +551,6 @@ main article {
     /* Slightly enlarge the button on hover */
 }
 
-/* Adjustments for Extra Small Screens (Phones) */
-@media (max-width: 480px) {
-
-    .content-small {
-        display: block;
-    }
-
-    .content-small .button-group {
-        font-size: smaller;
-        font-family: inherit;
-        /* margin-left: 1rem; */
-        flex-direction: row;
-        /* Stack buttons vertically on small screens */
-        gap: 5px;
-        /* Add spacing between buttons */
-    }
-
-    .content-small .description {
-        font-size: 0.7rem;
-        margin-bottom: 12px;
-        text-align: justify;
-    }
-
-    .content-small button a {
-        font-size: 0.7rem;
-    }
-
-    /* temporary */
-    /* .packages-dropdown {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #333;
-        width: 200px;
-        text-align: center;
-        padding: 10px 0;
-    } */
-.nav-links a{
-    font-size: 0.9rem;
-}
-
-.packages-dropdown:hover #dropdown-menu {
-    display: block;
-    scale: 50%;
-    left: -35px;
-    top: -17px;
-}
-
-.packages-dropdown{
-    width: max-content;
-}
-
-#animate-area h1{
-    font-size: 2rem;
-}
-
-h1{
-    font-size: 1.5rem;
-}
-
-}
 
 /* General Styling */
 .upcoming-section {
@@ -833,80 +724,6 @@ h1{
         transform: translateY(0);
     }
 }
-
-/* MEDIA QUERIES */
-
-/* For smaller screens (up to 768px), stack the content and adjust sizes */
-@media (max-width: 768px) {
-    .upcoming-subheading {
-        font-size: 1rem;
-    }
-
-    .upcoming-section {
-        padding: 30px;
-    }
-
-    .upcoming-content-wrapper {
-        flex-direction: column;
-        /* Stack the content and image vertically */
-        align-items: center;
-    }
-
-    .upcoming-content {
-        max-width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .upcoming-image-wrapper {
-        max-width: 100%;
-        margin-top: 20px;
-    }
-
-    .upcoming-text {
-        font-size: 0.9rem;
-    }
-
-    .upcoming-cta-button {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-}
-
-/* For very small screens (below 480px), further reduce sizes */
-@media (max-width: 480px) {
-    .upcoming-section {
-        padding: 20px;
-        /* Reduce padding */
-    }
-
-    .upcoming-content-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .upcoming-content {
-        max-width: 100%;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .upcoming-image-wrapper {
-        max-width: 100%;
-        margin-top: 15px;
-    }
-
-    .upcoming-text {
-        font-size: 0.7rem;
-        /* padding: 2px 2px 2px 2px; */
-    }
-
-    .upcoming-cta-button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-}
-
 
 
 /* cards */
@@ -1108,76 +925,6 @@ h1{
     height: 100%;
 }
 
-/* MEDIA QUERIES */
-
-/* For smaller screens, stack the cards in a column */
-@media (max-width: 768px) {
-    .card-section .card-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .card-section .card {
-        width: 90%;
-        /* Make cards take up more width on smaller screens */
-        margin-bottom: 2rem;
-        /* Add space between stacked cards */
-        height: 300px;
-    }
-
-    .card__content {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 1rem 2rem;
-        /* Adjusted padding for better spacing */
-        justify-content: space-between;
-    }
-
-    .card-section .card__title {
-        font-size: 1.2rem;
-        /* Adjust title font size for smaller screens */
-    }
-
-    .card-section .card__description {
-        font-size: 0.95rem;
-        /* Adjust description font size for smaller screens */
-    }
-
-    .card-section .card__button {
-        padding: 0.75rem 1.2rem;
-        /* Adjust button padding for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-
-    .card-container .card__title {
-        font-size: 0.9rem;
-        margin-left: 0.5rem;
-    }
-
-    /* .card-container p {
-        font-size: 0.5rem;
-    } */
-
-    .card-section .card__button {
-        scale: 80%;
-    }
-
-    .card-section .card__description {
-        font-size: 0.7rem;
-        margin-left: 0.5rem;
-    }
-
-    .card-section .card__content {
-        padding: 1rem;
-        /* Reduced padding for smaller screens */
-    }
-}
-
-
-
 /* brands */
 #brands {
     padding: 2rem;
@@ -1273,22 +1020,6 @@ h1{
     display: block;
     object-fit: contain;
     /* Ensures image is fully visible */
-}
-
-@media (max-width: 768px) {
-    .brand-slider::after {
-        background: none;
-    }
-
-    #brands {
-        width: 100%;
-    }
-
-    :root {
-        --animation-speed: 50s;
-        --slide-gap: 10px;
-        /* Adjust gap between slides */
-    }
 }
 
 
@@ -1392,38 +1123,6 @@ h1{
     }
 }
 
-
-
-@media (max-width: 768px) {
-    .testimonial-container {
-        padding: 15px 20px;
-    }
-
-    .fa-quote {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonial {
-        line-height: 1.5;
-        text-align: justify;
-        margin: 1rem;
-        font-size: 0.7rem;
-    }
-
-    .user .username {
-        margin-left: 8px;
-        font-size: 0.7rem;
-    }
-
-    .user .role {
-        font-size: 0.6rem;
-    }
-}
-
-
-
 /* Footer */
 /* Main Footer Section */
 footer {
@@ -1521,8 +1220,50 @@ footer {
     /* Added margin between main and sub-footer */
 }
 
-/* Responsive Design */
+/* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
+
+    /* navbar */
+    .logo-div {
+        scale: 80%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        padding: 1em;
+    }
+
+    #full-menu {
+        padding: 8em 2em 2em;
+    }
+
+    nav .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .level-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #full-menu h3,
+    #full-menu p {
+        font-size: 1rem;
+    }
+
+    .level-1 li {
+        grid-column: 1 / -1;
+    }
+
+    section#full-menu ul.level-3 li {
+        font-size: 0.9rem;
+    }
+
+    /* footer */
     .main-footer {
         flex-direction: column;
         align-items: center;
@@ -1539,9 +1280,293 @@ footer {
         margin-top: 1.5rem;
         /* Additional space for small screens */
     }
+
+    /* upcoming */
+
+    .upcoming-subheading {
+        font-size: 1rem;
+    }
+
+    .upcoming-section {
+        padding: 30px;
+    }
+
+    .upcoming-content-wrapper {
+        flex-direction: column;
+        /* Stack the content and image vertically */
+        align-items: center;
+    }
+
+    .upcoming-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .upcoming-image-wrapper {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .upcoming-text {
+        font-size: 0.9rem;
+    }
+
+    .upcoming-cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* cards */
+    .card-section .card-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .card-section .card {
+        width: 90%;
+        /* Make cards take up more width on smaller screens */
+        margin-bottom: 2rem;
+        /* Add space between stacked cards */
+        height: 300px;
+    }
+
+    .card__content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem 2rem;
+        /* Adjusted padding for better spacing */
+        justify-content: space-between;
+    }
+
+    .card-section .card__title {
+        font-size: 1.2rem;
+        /* Adjust title font size for smaller screens */
+    }
+
+    .card-section .card__description {
+        font-size: 0.95rem;
+        /* Adjust description font size for smaller screens */
+    }
+
+    .card-section .card__button {
+        padding: 0.75rem 1.2rem;
+        /* Adjust button padding for smaller screens */
+    }
+
+    /* brands */
+    .brand-slider::after {
+        background: none;
+    }
+
+    #brands {
+        width: 100%;
+    }
+
+    :root {
+        --animation-speed: 50s;
+        --slide-gap: 10px;
+        /* Adjust gap between slides */
+    }
+
+    /* testimonials */
+    .testimonial-container {
+        padding: 15px 20px;
+    }
+
+    .fa-quote {
+        display: none;
+    }
+
+}
+
+
+
+@media (min-width: 481px) and (max-width: 900px) {
+    .content-small {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    .content-small .button-group {
+        font-size: smaller;
+        font-family: inherit;
+        /* margin-left: 1rem; */
+        flex-direction: row;
+        /* Stack buttons vertically on small screens */
+        gap: 5px;
+        /* Add spacing between buttons */
+    }
 }
 
 @media screen and (max-width: 480px) {
+    .page-wrap #full-menu {
+        display: flex;
+        /* Enable flex layout */
+        position: fixed;
+        /* Keeps the menu over the page */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        /* Full viewport width */
+        height: max-content;
+        /* Smaller height than full viewport */
+        z-index: 10;
+        /* Ensure it sits on top of other elements */
+        flex-direction: column;
+        justify-content: center;
+        /* Center content vertically */
+        align-items: center;
+        /* Center content horizontally */
+        overflow-y: auto;
+        /* Add scrolling if content overflows */
+    }
+
+    nav .navbar .nav-links {
+        display: none;
+    }
+
+    /* Hide additional content if not needed */
+    #full-menu .level-1 h3,
+    #full-menu .level-1 .level-2 {
+        display: none;
+    }
+
+    /* Style the nav-links within the full-menu to be in a column */
+    #full-menu .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    /* Optional: add spacing between nav items */
+    #full-menu .nav-links li {
+        margin: 10px 0;
+    }
+
+    #full-menu .nav-links li a {
+        font-size: 1.1rem;
+    }
+
+
+    .content-small {
+        display: block;
+    }
+
+    .content-small .button-group {
+        font-size: smaller;
+        font-family: inherit;
+        /* margin-left: 1rem; */
+        flex-direction: row;
+        /* Stack buttons vertically on small screens */
+        gap: 5px;
+        /* Add spacing between buttons */
+    }
+
+    .content-small .description {
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+        text-align: justify;
+    }
+
+    .content-small button a {
+        font-size: 0.7rem;
+    }
+
+    /* temporary */
+    /* .packages-dropdown {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 200px;
+        text-align: center;
+        padding: 10px 0;
+    } */
+
+    #animate-area h1 {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .upcoming-section {
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .upcoming-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upcoming-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .upcoming-image-wrapper {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .upcoming-text {
+        font-size: 0.7rem;
+        /* padding: 2px 2px 2px 2px; */
+    }
+
+    .upcoming-cta-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+
+    .card-container .card__title {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+
+    /* .card-container p {
+    font-size: 0.5rem;
+} */
+
+    .card-section .card__button {
+        scale: 80%;
+    }
+
+    .card-section .card__description {
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
+    }
+
+    .card-section .card__content {
+        padding: 1rem;
+        /* Reduced padding for smaller screens */
+    }
+
+    .testimonial {
+        line-height: 1.5;
+        text-align: justify;
+        margin: 1rem;
+        font-size: 0.7rem;
+    }
+
+    .user .username {
+        margin-left: 8px;
+        font-size: 0.7rem;
+    }
+
+    .user .role {
+        font-size: 0.6rem;
+    }
+
     footer .h3 {
         font-size: 0.9rem;
     }
