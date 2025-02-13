@@ -29,7 +29,7 @@
 #animate-area {
   position: relative;
   z-index: 8;
-  margin-top: 8rem;
+  margin-top: 6rem;
   height: 180px;
   width: 100vw;
   background-image: url(https://davidwalsh.name/demo/bg-clouds.png);
@@ -118,17 +118,17 @@
 
 /* Card Content */
 .card-content {
-  padding: 15px;
+  padding: 3rem 1rem;
   text-align: center;
-  border-bottom-left-radius: 20px; /* Match card border-radius */
-  border-bottom-right-radius: 20px;
+  /* border-bottom-left-radius: 20px;  */
+  /* border-bottom-right-radius: 20px; */
 }
 
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--logo-blue1); /* Darker shade for better readability */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   text-transform: uppercase; /* Add emphasis */
   letter-spacing: 1px; /* Slight spacing for elegance */
   transition: color 0.3s ease;
