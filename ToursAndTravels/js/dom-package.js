@@ -27,12 +27,12 @@ const tourPackagesContainer = document.getElementById("tourPackages");
 tourData.forEach((tour, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.style.animationDelay = `${index * 0.2}s`; // Add staggered animation delay
+    card.id = tour.title.toLowerCase().replace(/\s+/g, "-"); // Convert title to lowercase and replace spaces with '-'
+    card.style.animationDelay = `${index * 0.2}s`;
 
-    // Regular expression to match the cost and split description accordingly
-    const costMatch = tour.description.match(/₹[\d,]+/); // Match cost
+    const costMatch = tour.description.match(/₹[\d,]+/);
     const cost = costMatch ? costMatch[0] : "";
-    const descriptionText = tour.description.replace(cost, "").trim(); // Remove cost from description for cleaner text
+    const descriptionText = tour.description.replace(cost, "").trim();
 
     card.innerHTML = `
         <img src="${tour.image}" alt="${tour.title}">
@@ -42,12 +42,13 @@ tourData.forEach((tour, index) => {
                 ${descriptionText}<br><b class="cost">${cost}<br></b>
                 <span class="star">*</span>T&C apply
             </p>
-            <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank" class="card-button">Book Now</a>
+            <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="card-button">Book Now</a>
         </div>
     `;
 
     tourPackagesContainer.appendChild(card);
 });
+
 
 // Select all buttons with the class 'card-button'
 const cardButtons = document.querySelectorAll(".card-button");
