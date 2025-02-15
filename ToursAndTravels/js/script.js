@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // ✅ Calculate correct total width including gaps
-            const slideWidth = 250; // Width of each slide
+            const slideWidth = 180 ; // Width of each slide
             const slideGap = 20; // Gap between slides
             const totalSlides = slides.length * 2; // Original + Clones
 
