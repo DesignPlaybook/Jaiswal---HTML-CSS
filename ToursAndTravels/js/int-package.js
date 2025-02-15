@@ -65,7 +65,6 @@ function changeButtonColors(backgroundColor, hoverColor) {
 // Example usage:
 changeButtonColors("var(--logo-blue6)", "var(--logo-green1)");  // Change button color to blue and hover to green
 
-
 // Scroll animation logic
 const observeCards = () => {
     const cards = document.querySelectorAll(".card");
