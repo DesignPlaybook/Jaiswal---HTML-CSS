@@ -8,7 +8,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
-
   <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js" defer></script>
@@ -30,6 +29,54 @@
 
   <!-- GSAP for Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".animate, .animate-left, .animate-right, .animate-fade");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(element => observer.observe(element));
+    });
+
+    // Open the contact form popup
+    function openPopup() {
+      document.getElementById("popupOverlay").style.display = "block";
+      document.getElementById("popupContainer").style.display = "block";
+    }
+
+    // Close the contact form popup
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+      document.getElementById("popupContainer").style.display = "none";
+    }
+
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Hide form popup
+      closePopup();
+
+      // Show confirmation message
+      document.getElementById("popupMessageOverlay").style.display = "block";
+      document.getElementById("popupMessage").style.display = "block";
+    });
+
+    // Close confirmation popup
+    function closeConfirmation() {
+      document.getElementById("popupMessageOverlay").style.display = "none";
+      document.getElementById("popupMessage").style.display = "none";
+    }
+
+
+  </script>
+
 </head>
 
 <body>
@@ -51,6 +98,7 @@
             <li><a href="dom-package.html" target="_top">Domestic Packages</a></li>
             <li><a href="int-package.html" target="_top">International Packages</a></li>
             <li><a href="contact.html" target="_top">Contact</a></li>
+            <li><a href="about.html" target="_top">About Us</a></li>
           </ul>
           <ul class="menu">
             <li id="burger">
@@ -246,82 +294,34 @@
 
   <!-- Upcoming Event Section -->
   <section class="upcoming-section">
-    <h1 class="heading">Upcoming Event</h1>
-    <h2 class="upcoming-subheading">Prayagraj - Mahakumbh Mela</h2>
+    <h1 class="upcoming-heading animate">Upcoming Event</h1>
+    <h2 class="upcoming-subheading animate">Prayagraj - Mahakumbh Mela</h2>
     <div class="upcoming-content-wrapper">
-      <div class="upcoming-content">
+      <div class="upcoming-content animate-left">
         <p class="upcoming-text">
-          Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to
-          Prayagraj! This thoughtfully
-          curated trip offers an opportunity to explore the city's historic landmarks, including the majestic
-          Allahabad Fort, Anand Bhavan, and serene ghats. Witness the timeless rituals performed at the Sangam
-          and
-          soak in the vibrant local culture. Whether you’re a history enthusiast, a spiritual seeker, or
-          simply
-          looking to experience the beauty of India’s heritage, this trip promises a truly enriching
-          experience.
-          Join us for this soulful adventure and create memories to cherish forever!
+          Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to Prayagraj!
+          This thoughtfully curated trip offers an opportunity to explore the city's historic landmarks, including
+          the majestic Allahabad Fort, Anand Bhavan, and serene ghats. Witness the timeless rituals performed at
+          the Sangam and soak in the vibrant local culture. Whether you’re a history enthusiast, a spiritual seeker,
+          or simply looking to experience the beauty of India’s heritage, this trip promises a truly enriching
+          experience. Join us for this soulful adventure and create memories to cherish forever!
         </p>
       </div>
-
-      <div class="upcoming-image-wrapper">
-        <div class="upcoming-img" loading="lazy">
-          <img src="images/prayagraj.jpg" alt="Prayagraj Image" class="upcoming-img" />
-        </div>
+      <div class="upcoming-image-wrapper animate-right">
+        <img src="images/prayagraj.jpg" alt="Prayagraj Image" class="upcoming-img" />
       </div>
     </div>
-
-    <div class="upcoming-button-wrapper">
-      <div class="upcoming-button">
-        <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="upcoming-cta-button">Book Now</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- brands -->
-  <section id="brands">
-    <div class="brands-title">
-      <h1>Our Premium Hotel Partners</h1>
-      <p class="upcoming-subheading ">We have exclusive tie-ups with renowned hospitality brands:</h2>
-    </div>
-    <div class="brand-container">
-      <div class="brand-slider">
-        <div class="brand-slide-track">
-          <div class="brand-slide">
-            <img src="images/tajlogo.png" height="70" width="auto" alt="Taj Hotel" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/lalitlogo.png" height="70" width="auto" alt="Lalit Hotel" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/sarover.png" height="70" width="auto" alt="" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/renestlogo.png" height="70" width="auto" alt="" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/novotellogo.jpg" height="70" width="auto" alt="" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/Lords-Hotels-and-Resorts.png" height="70" width="auto" padding="2px" alt="" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/Lemon_Tree_Hotels_Logo.png" height="70" width="auto" alt="" />
-          </div>
-          <div class="brand-slide">
-            <img src="images/Clarks_Inn.webp" height="70" width="auto" alt="" />
-          </div>
-        </div>
-      </div>
+    <div class="upcoming-button-wrapper animate-fade">
+      <a href="#" class="upcoming-cta-button" onclick="openPopup()">Book Now</a>
     </div>
   </section>
 
   <!-- Cards -->
   <div class="card-section">
     <div class="cards-title">
-      <h1>Packages</h1>
-      <p class="upcoming-subheading ">Our packages cater to every budget, offering luxurious and affordable trips.</p>
+      <h1 class="upcoming-heading animate">Packages</h1>
+      <p class="upcoming-subheading animate">Our packages cater to every budget, offering luxurious and affordable
+        trips.</p>
     </div>
     <div class="card-container">
       <!-- Domestic Package Card -->
@@ -362,8 +362,8 @@
   <!-- Testimonials -->
   <section class="custom-testimonial-section">
     <div class="testimonial-title">
-      <h1>Our Customer Reviews</h1>
-      <p class="upcoming-subheading ">See what our customers have to say about our service</p>
+      <h1 class="upcoming-heading animate">Our Customer Reviews</h1>
+      <p class="upcoming-subheading animate">See what our customers have to say about our service</p>
     </div>
     <div class="custom-testimonial-carousel">
       <div class="custom-testimonial-item active">
@@ -435,6 +435,45 @@
     </div>
 
   </section>
+
+    <!-- brands -->
+    <section id="brands">
+      <div class="brands-title">
+        <h1 class="upcoming-heading animate">Our Premium Hotel Partners</h1>
+        <p class="upcoming-subheading animate">We have exclusive tie-ups with renowned hospitality brands:</h2>
+      </div>
+      <div class="brand-container">
+        <div class="brand-slider">
+          <div class="brand-slide-track">
+            <div class="brand-slide">
+              <img src="images/tajlogo.png" height="70" width="auto" alt="Taj Hotel" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/lalitlogo.png" height="70" width="auto" alt="Lalit Hotel" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/sarover.png" height="70" width="auto" alt="" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/renestlogo.png" height="70" width="auto" alt="" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/novotellogo.jpg" height="70" width="auto" alt="" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/Lords-Hotels-and-Resorts.png" height="70" width="auto" padding="2px" alt="" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/Lemon_Tree_Hotels_Logo.png" height="70" width="auto" alt="" />
+            </div>
+            <div class="brand-slide">
+              <img src="images/Clarks_Inn.webp" height="70" width="auto" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
   <!-- FOOTER -->
   <footer>
     <!-- Main Footer Section -->
@@ -486,17 +525,42 @@
       <a href="https://wa.me/919372787566" target="_blank" class="whatsapp-icon" title="Chat with us on WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       </a>
-      <div class="popup-message">WhatsApp Us</div>
+      <div class="float-popup-message">WhatsApp Us</div>
     </div>
 
     <div class="call-container">
       <a href="tel:9892457482" class="call-icon" title="Call us">
         <i class="fa fa-phone" aria-hidden="true"></i>
       </a>
-      <div class="popup-message">Call Us</div>
+      <div class="float-popup-message">Call Us</div>
     </div>
   </div>
 
+  <!-- Contact Form Popup -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Get in Touch</h2>
+      <p>We would love to hear from you!</p>
+      <form class="contact-form" id="contactForm">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="tel" id="phone" placeholder="Your Mobile Number" required>
+        </div>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation Popup -->
+  <div class="popup-overlay" id="popupMessageOverlay"></div>
+  <div class="popup-message" id="popupMessage">
+    <p>Thank you! We will contact you shortly.</p>
+    <button onclick="closeConfirmation()">OK</button>
+  </div>
 
   <!-- <section class="flex-content padding_2x">
         <h3 class="title small">Newsletter</h3>
