@@ -647,10 +647,6 @@ main article {
     /* padding-bottom: 1; */
     background: white;
     /* Ensure the section has a background */
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-    /* Rounded corners for the entire section */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     /* Subtle shadow around section */
     /* margin: 3rem auto; */
     /* Add spacing to make shadow visible */
@@ -691,7 +687,7 @@ main article {
 .card-container {
     display: flex;
     justify-content: space-evenly;
-    padding: 4rem 10rem;
+    padding: 3rem 10rem;
     padding-top: 0;
     overflow: visible;
 }
@@ -815,7 +811,7 @@ main article {
     .card-section .card:focus-within .card__button {
         opacity: 1;
         transition: opacity 500ms ease-in;
-        transition-delay: 1000ms;
+        transition-delay: 10ms;
     }
 
     .card-section .card:hover .card__title::after,
@@ -846,8 +842,11 @@ main article {
 
 /* brands */
 #brands {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     padding-top: 0;
+    /* border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -952,7 +951,7 @@ main article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 2rem;
     text-align: center;
     position: relative;
 }
@@ -961,14 +960,15 @@ main article {
 .custom-testimonial-section::before {
     content: "";
     position: absolute;
-    top: -10%;
-    left: 10%;
+    top: 40%;
+    left: 50%;
     width: 100%;
-    height: 90%; /* Covers the top half */
-    background: #a8cf46c2; /* Gradient example */
+    height: 70%;
+    background: #a8cf46c2;
     z-index: -1;
-    border-radius: 0 0 0% 90%;
+    transform: translate(-50%, -50%); /* Centers the oval */
 }
+
 
 .testimonial-title {
     padding: 2rem;
@@ -1110,14 +1110,19 @@ main article {
 
 /* Small Screens (Mobile Phones) */
 @media (max-width: 480px) {
+    .page-wrap, .page-wrap main{
+        height: 60vh;
+    }
     .custom-testimonial-section {
         height: auto;
         /* Auto height for better content visibility */
         padding: 40px 10px;
     }
 
-    .testimonial-title h1 {
-        font-size: 20px;
+    .testimonial-title {
+        /* font-size: 20px; */
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     #brands .brands-title p,
@@ -1127,11 +1132,14 @@ main article {
 
     .custom-testimonial-carousel {
         width: 90%;
-        padding: 15px;
+        /* padding: 15px; */
     }
 
     .custom-testimonial-text {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .custom-testimonial-stars {
+        padding: 0rem;
     }
 
     .custom-testimonial-prev,
@@ -1145,7 +1153,12 @@ main article {
     }
 
     .custom-testimonial-name {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .custom-see-more {
+        padding: 0rem;
+        font-size: 12px;
     }
 }
 
@@ -1462,7 +1475,9 @@ footer {
     #full-menu .level-1 .level-2 {
         display: none;
     }
-
+    #full-menu{
+        padding-top: 5rem;
+    }
     /* Style the nav-links within the full-menu to be in a column */
     #full-menu .nav-links {
         display: flex !important;
@@ -1473,7 +1488,7 @@ footer {
 
     /* Optional: add spacing between nav items */
     #full-menu .nav-links li {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     #full-menu .nav-links li a {
@@ -1491,7 +1506,7 @@ footer {
         /* margin-left: 1rem; */
         flex-direction: row;
         /* Stack buttons vertically on small screens */
-        gap: 5px;
+        gap: 4px;
         /* Add spacing between buttons */
     }
 
@@ -1608,7 +1623,7 @@ footer {
     }
 
     .main-footer {
-        margin-bottom: 0.1rem;
+        /* margin-bottom: 0.1rem; */
     }
 }
 
@@ -1777,6 +1792,7 @@ input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    resize: none;
 }
 
 button {
