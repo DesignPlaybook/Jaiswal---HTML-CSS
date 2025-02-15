@@ -16,7 +16,6 @@
   --logo-gradient: linear-gradient(139deg, var(--logo-blue1), var(--logo-blue2), var(--logo-blue3), var(--logo-blue4), var(--logo-blue5), var(--logo-blue6));
 }
 
-
 @keyframes animatedBackground {
   from {
     background-position: 0 0;
