@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@100;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/jaiswallogo.ico" type="image/x-icon">
+    <link rel="icon" href="images/jaiswallogo.png" type="image/png">
+    <link rel="icon" href="images/jaiswallogo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <!-- jQuery (Required) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Waypoints.js (For detecting scroll position) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- Counter-Up Plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>$(document).ready(function () {
+            let start = 1000;
+            let end = 500000;
+            let steps = 100;
+            let increment = (end - start) / steps;
+            let current = start;
+            let counterElement = $('.customer-counter');
+
+            function updateCounter() {
+                if (current < end) {
+                    current += increment;
+                    counterElement.text(Math.floor(current).toLocaleString());
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counterElement.text("5L+");
+                }
+            }
+
+            // Function to trigger animation when in viewport
+            function startCounter() {
+                let waypoint = new Waypoint({
+                    element: counterElement[0],
+                    handler: function () {
+                        updateCounter();
+                        this.destroy(); // Ensures the animation runs only once
+                    },
+                    offset: '75%',
+                });
+            }
+
+            startCounter();
+
+            // Add animations
+            counterElement.addClass('animated fadeInDownBig');
+            $('.customer-count h3').addClass('animated fadeIn');
+        });
+
+        // GSAP carousel animation
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.to(".carousel", {
+                x: "-50%", // Moves only half to create a continuous loop
+                duration: 40, // Matches brand slider speed (40s)
+                repeat: -1,
+                ease: "linear"
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+    <div class="page-wrap" style="height: fit-content;">
+
+        <header class="page-header">
+
+            <nav>
+                <div class="logo-div">
+                    <a href="#" class="logo" target="_blank">
+                        <img src="images/jaiswallogo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="navbar">
+                    <ul class="nav-links">
+                      <li><a href="index.html" target="_top">Home</a></li>
+                      <li><a href="dom-package.html" target="_top">Domestic Packages</a></li>
+                      <li><a href="int-package.html" target="_top">International Packages</a></li>
+                      <li><a href="contact.html" target="_top">Contact</a></li>
+                      <!-- <li><a href="about.html" target="_top">About Us</a></li> -->
+                    </ul>
+                    <ul class="menu">
+                      <li id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </li>
+                    </ul>
+                  </div>
+            </nav>
+        </header>
+        <section id="full-menu">
+            <ul class="level-1">
+                <li>
+                    <ul class="nav-links">
+                        <li><a href="index.html" target="_top">Home</a></li>
+                        <li><a href="dom-package.html" target="_top">Domestic Packages</a></li>
+                        <li><a href="int-package.html" target="_top">International Packages</a></li>
+                        <!-- <li><a href="#">About</a></li> -->
+                        <li><a href="contact.html" target="_top">Contact</a></li>
+                    </ul>
+                    <h3>Destinations</h3>
+                    <ul class="level-2">
+
+                        <li>
+                            <p>India</p>
+                            <ul class="level-3">
+                                <li><a href="dom-package.html#kerala" target="_top">Kerala</a></li>
+                                <li><a href="dom-package.html#kashmir" target="_top">Kashmir</a></li>
+                                <li><a href="dom-package.html#sikkim" target="_top">Sikkim</a></li>
+                                <li><a href="dom-package.html#andaman" target="_top">Andaman-Nicobar</a></li>
+                                <li><a href="dom-package.html#goa" target="_top">Goa</a></li>
+                                <li><a href="dom-package.html#ooty" target="_top">Ooty-Coorg</a></li>
+                                <li><a href="dom-package.html#himachal" target="_top">Himachal Pradesh</a></li>
+                                <li><a href="dom-package.html#shimla" target="_top">Shimla-Manali</a></li>
+                                <li><a href="dom-package.html#rajasthan" target="_top">Rajasthan</a></li>
+                                <li><a href="dom-package.html#uttarakhand" target="_top">Uttarakhand</a></li>
+                                <li><a href="dom-package.html#golden-triangle" target="_top">Golden Triangle</a></li>
+                                <li><a href="dom-package.html#chardham" target="_top">Chardham</a></li>
+                                <li><a href="dom-package.html#mahabaleshwar" target="_top">Mahabaleshwar</a></li>
+                                <li><a href="dom-package.html#bhubaneshwar" target="_top">Bhubaneshwar-Puri</a></li>
+                                <li><a href="dom-package.html#nepal" target="_top">Nepal</a></li>
+                                <li><a href="dom-package.html#lakshadweep" target="_top">Lakshadweep</a></li>
+                                <li><a href="dom-package.html#rameshwaram" target="_top">Rameshwaram</a></li>
+                                <li><a href="dom-package.html#gujarat" target="_top">Gujarat</a></li>
+                                <li><a href="dom-package.html#hyderabad" target="_top">Hyderabad</a></li>
+                                <li><a href="dom-package.html#jammu" target="_top">Jammu-Amritsar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>International</p>
+                            <ul class="level-3">
+                                <li><a href="int-package.html#europe">Europe</a></li>
+                                <li><a href="int-package.html#dubai">Dubai</a></li>
+                                <li><a href="int-package.html#thailand">Thailand</a></li>
+                                <li><a href="int-package.html#bali">Bali</a></li>
+                                <li><a href="int-package.html#vietnam">Vietnam</a></li>
+                                <li><a href="int-package.html#maldives">Maldives</a></li>
+                                <li><a href="int-package.html#singapore-malaysia">Singapore-Malaysia</a></li>
+                                <li><a href="int-package.html#london">London</a></li>
+                                <li><a href="int-package.html#turkey">Turkey</a></li>
+                                <li><a href="int-package.html#baku">Baku</a></li>
+                                <li><a href="int-package.html#south-africa">South Africa</a></li>
+                                <li><a href="int-package.html#austria">Austria</a></li>
+                                <li><a href="int-package.html#japan">Japan</a></li>
+                                <li><a href="int-package.html#cambodia">Cambodia</a></li>
+                            </ul>
+
+                        </li>
+                        <!-- <li>
+                        <p>Africa</p>
+                        <ul class="level-3">
+                            <li>Egypt</li>
+                            <li>Maurtius</li>
+                            <li>Morocco</li>
+                        </ul>
+                    </li> -->
+                        <!-- <li>
+                        <p>Middle East</p>
+                        <ul class="level-3">
+                            <li>Egypt</li>
+                            <li>Jordan</li>
+                            <li>Oman</li>
+                            <li>Turkey</li>
+                        </ul>
+                    </li> -->
+                    </ul>
+                </li>
+                <!-- <li>
+                <h3>Travel Tips</h3>
+                <ul>
+                    <li>Going on a trip</li>
+                    <li>Travel Insurance</li>
+                    <li>Working abroad</li>
+                    <li>Saving</li>
+                    <li>Instagram tips</li>
+                </ul>
+                <p><small>More tips...</small></p>
+            </li>
+            <li>
+                <h3>Resources</h3>
+                <ul>
+                    <li>Personalised travel advice</li>
+                    <li>Where we book our travels</li>
+                    <li>Become a booking agent</li>
+                </ul>
+                <p><small>More resources...</small></p>
+            </li>
+            <li> -->
+                <!-- <h3>About Us</h3>
+                <ul>
+                    <li>Our story</li>
+                    <li>Work with us</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </li> -->
+            </ul>
+        </section>
+
+    </div>
+
+
+    <section class="about" style="margin-top: 5rem;">
+        <header>
+            <p class="small">About Us</p>
+            <h2>Jaiswal Holidays: Your dream holidays await</h2>
+            <p class="content"> Welcome to Jaiswal Holidays, your trusted travel partner for unforgettable domestic and
+                international
+                experiences. We specialize in crafting personalized travel packages that cater to your unique
+                preferences, whether you're exploring the vibrant landscapes of India or venturing into breathtaking
+                global destinations.
+
+                With a passion for travel and a commitment to excellence, we ensure seamless planning, comfortable
+                stays, and memorable journeys. Whether it's a relaxing beach getaway, an adventurous expedition, or a
+                luxurious holiday, we bring you the best deals and hassle-free travel solutions.
+
+                Let Jaiswal Holidays turn your travel dreams into reality—because every journey deserves to
+                be extraordinary!</p>
+
+        </header>
+        <!--         
+        <div class="customer-count">
+            <div class="customer-container">
+                <div class="customer-row">
+                    <div class="customer-col">
+                        <h1><span class="customer-counter">2,523</span></h1>
+                        <h3>Trusted Travelers</h3>
+                        <i class="fa fa-users customer-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <ul class="gallery">
+            <li>
+                <figure>
+                    <a href="#"><img
+                            src="https://images.unsplash.com/photo-1633867113487-5118d97e546d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDk3ODQxMTd8&ixlib=rb-4.0.3&q=85"></a>
+                    <figurecaption>
+                        <div class="about-main">
+                            <p class="small">9-day trip</p>
+                            <h3>To the cities of joys, <em> Austrelia</em></h3>
+                            <p>Dive into the vibrant underwater world of the Great Barrier
+                                Reef, a UNESCO World Heritage Site teeming with marine life.
+                            </p>
+
+
+                        </div>
+                        <div class="about-footer">
+                            <div>
+                                <p class="small">From</p>
+                                <p class="price">€2,500</p>
+                            </div>
+                            <svg viewBox="0 0 448 512" width="100" title="arrow-right">
+                                <path
+                                    d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z" />
+                            </svg>
+                        </div>
+                    </figurecaption>
+                </figure>
+            </li>
+        </ul> -->
+    </section>
+
+    <!-- Why Choose Us & Our Offerings -->
+    <!-- <section class="why-choose-us">
+        <header>
+            <h2>Why Choose Us?</h2>
+        <p>We offer unmatched travel experiences with top-tier accommodations, exclusive deals, and trusted clientele.
+        </p>
+        </header> -->
+    <!-- Hotel Tie-ups
+        <div class="hotel-partners">
+            <h3>Our Premium Hotel Partners</h3>
+            <p>We have exclusive tie-ups with renowned hospitality brands:</p>
+            <div class="brand-container" style="margin: 1rem auto;">
+                <div class="brand-slider">
+                    <div class="brand-slide-track">
+                        <div class="brand-slide">
+                            <img src="images/tajlogo.png" height="100" width="auto" alt="Taj Hotel" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/lalitlogo.png" height="100" width="auto" alt="Lalit Hotel" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/sarover.png" height="100" width="auto" alt="" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/renestlogo.png" height="100" width="auto" alt="" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/novotellogo.jpg" height="100" width="auto" alt="" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/Lords-Hotels-and-Resorts.png" height="100" width="auto" padding="2px"
+                                alt="" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/Lemon_Tree_Hotels_Logo.png" height="100" width="auto" alt="" />
+                        </div>
+                        <div class="brand-slide">
+                            <img src="images/Clarks_Inn.webp" height="100" width="auto" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Customer Count Section -->
+    <!-- <h3  style="margin: 6rem 0rem auto;">Trusted by Over 500,000 Customers</h3>
+        <p>Join our vast network of satisfied travelers and experience world-class service.</p> -->
+
+    <!-- Clients Carousel Section -->
+    <!-- <div class="clients-carousel">
+    <h3>Our Esteemed Clients</h3>
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <span>SS Construction</span>
+            <span>Supriya Construction</span>
+            <span>Shubham Builders</span>
+            <span>Maruti Suzuki ARENA</span>
+            <span>Vestige Marketing Pvt. Ltd</span>
+            <span>AWPL</span>
+            <span>Samarth Success Life</span>
+            <span>Vivaamart Enterprises</span>
+            <span>Sairama Real Estate</span>
+            <span>SS Construction</span>
+            <span>Supriya Construction</span>
+            <span>Shubham Builders</span>
+            <span>Maruti Suzuki ARENA</span>
+            <span>Vestige Marketing Pvt. Ltd</span>
+            <span>AWPL</span>
+            <span>Samarth Success Life</span>
+            <span>Vivaamart Enterprises</span>
+            <span>Sairama Real Estate</span>
+        </div>
+    </div>
+</div> -->
+
+    <!-- Packages Overview -->
+    <!-- <div class="package-pricing" style="margin: 6rem auto;">
+            <h3>Exclusive Travel Packages</h3>
+            <p>Our packages cater to every budget, offering luxurious and affordable trips.</p>
+            <div class="package-list">
+                <div>
+                    <h4>Domestic Packages</h4>
+                    <p>Starting from <strong>₹5,000</strong> (Mahabaleshwar) to <strong>₹30,000</strong> (Himachal
+                        Pradesh).</p>
+                </div>
+                <div>
+                    <h4>International Packages</h4>
+                    <p>Starting from <strong>₹20,000</strong> (Thailand) to <strong>₹2 Lakhs</strong> (Europe).</p>
+                </div>
+            </div>
+        </div> -->
+    <!-- </section> -->
+
+    <!-- Gallery -->
+    <section class="image-gallery">
+        <!-- <h2>Discover</h2> -->
+        <div class="wrapper">
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJLi3wM9me-aIMkKFv0x2w5EjCxk5ddoNspSHs99TSQtjRyxQryQgDGQ3HrentRjRSgHhkVgwrHHxeOAelhDdP0Ugth0CyAZfw0xGDIrLTj8KzkqMk-ySqb-zV4eQtrwyQS3KJTq=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJK2pehLT0M6MB75yLWhx5TdtmiaxYQRHuwGzfRUGg4ZlGeSZ42iOuB7_gdf3psdVTRoKv_g6R55Cz_sspn4fOECb9Qblf3l4yZ9-t91GiXAeORWvuz-CaaFTiDt5foRgYQpmSMM=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJJlejiT7WdVXb-nCGtCdYY1XijwUuTHpkPkuKEXyUWBLtwrhepNPlUKzAFtf-493tUPPu6jQsZ9nRx9ewVK_4n237m0owovmXJnHQJ54EF0FXx7wNZGmuzqN6RHCbiHULCBTDp0=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJL8MMiw5n7Jfscx2HwRALihaxb89BizTFltl_9vDSMJC-5zd-lIK3f_JEn0Pti3IrlM8fpQTtx3cGwVTlLElv8lrWdjcvHVX2QYbSF7CEckMpGrjhYNJzlK8NddeBgTkiHopR2u=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJJQrPufzNzSdXteypF_dXzeM5p8MkuGTRIa459_D9SDcNlEaPx6GrBxyGN7cn5jptjOBTJ9PDg0uF22IX1OsoHnSkSZuHZTvG5beLtn6DpUL-XeAVCLGTnLXUD1SFfF-ipLn5aZ=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJJuh40LhEG0AzJNXtCWdNs7W1q_1Vpv_CC85Pse6zOyIY4_NaqxW9dhwNrNgF-TCX8iVGVKL_BVeKUoJxGkQZjZSgmaonTruJojbP-AGNlyQ-dI1cE17zWlsRdnsrVC_NjCQkzXKA=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJK2rDyvWyYVguBTgiH9W_e1v3hurVQm0HE_yp2AtnuaVlpd03ArjPTzkyXFrm95RUxc789EiktYr-Mmepo8brprpoe_KOYKlrUmgBBMwzvTMQH4JGf9xA8LoK9BjWC22C8PdgDF8A=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJKpWXRqEqpDiluqab2L0aTAv3cXkcvGjafXsHRH-bEOpteVeLLizJI7A81GF_wlkUQTMUxw0SExOT1PFrNqeXVHIXWUWPUKjV_Dhtts7opVPWc5fxwNMH2RC_Ue6Fz1iPfTpsHQ=s2732-w2732-h1282">
+            </div>
+            <div><img
+                    src="https://lh3.googleusercontent.com/geougc-cs/AIHozJJSL83trZRwkq5ELTa7W647uX7F9Bvkvht-2ljzPeLlvjscGITvTmhEeXFeCmm5I2AeSbFA8YMR37z2RBJGonriRHvQewO7qO5cK9QWUvuLRw5vazAWe7wGhxMwWG8YDqcjhKPGfw=s2732-w2732-h1282">
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <!-- Main Footer Section -->
+        <div class="main-footer">
+            <section class="flex-content padding_2x">
+                <h3 class="title small">Address</h3>
+                <p>
+                    Jaiswal Holidays, D-76, Sector-17,<br>
+                    Vashi Plaza, Vashi, Navi Mumbai-400703
+                </p>
+            </section>
+            <section class="flex-content padding_2x">
+                <h3 class="title small">Contact</h3>
+                <p>
+                    Mobile: <a href="tel:+919372787566">9372787566</a> & <a href="tel:+918268860844">8268860844</a><br>
+                    Email: <a href="mailto:adarsh.jaiswalholidays@gmail.com">adarsh.jaiswalholidays@gmail.com</a>
+                </p>
+
+                <div class="social_icons">
+                    <a href="https://www.instagram.com/jaiswalholidays7/" aria-label="Instagram" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/919372787566" aria-label="Whatsapp" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:+919372787566" aria-label="Telephone" class="social-link">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                </div>
+
+            </section>
+            <section class="flex-content padding_2x">
+                <h3 class="title small">Other Links</h3>
+                <div class="page-links">
+                    <a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">International Tour</a>
+                    <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Domestic Tour</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sub Footer -->
+        <div class="sub_footer">
+            <p>2025 &copy; All rights reserved by <strong>Design Playbook</strong></p>
+        </div>
+    </footer>
+
+    <div class="floating-icons-container">
+        <div class="whatsapp-container">
+            <a href="https://wa.me/919372787566" target="_blank" class="whatsapp-icon" title="Chat with us on WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <div class="float-popup-message">WhatsApp Us</div>
+        </div>
+
+        <div class="call-container">
+            <a href="tel:9892457482" class="call-icon" title="Call us">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </a>
+            <div class="float-popup-message">Call Us</div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
