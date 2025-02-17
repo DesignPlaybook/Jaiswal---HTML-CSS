@@ -42,39 +42,7 @@
       }, { threshold: 0.2 });
 
       elements.forEach(element => observer.observe(element));
-    });
-
-    // Open the contact form popup
-    function openPopup() {
-      document.getElementById("popupOverlay").style.display = "block";
-      document.getElementById("popupContainer").style.display = "block";
-    }
-
-    // Close the contact form popup
-    function closePopup() {
-      document.getElementById("popupOverlay").style.display = "none";
-      document.getElementById("popupContainer").style.display = "none";
-    }
-
-    // Handle form submission
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission
-
-      // Hide form popup
-      closePopup();
-
-      // Show confirmation message
-      document.getElementById("popupMessageOverlay").style.display = "block";
-      document.getElementById("popupMessage").style.display = "block";
-    });
-
-    // Close confirmation popup
-    function closeConfirmation() {
-      document.getElementById("popupMessageOverlay").style.display = "none";
-      document.getElementById("popupMessage").style.display = "none";
-    }
-
-
+    })
   </script>
 
 </head>
@@ -178,13 +146,13 @@
             <li><a href="about.html" target="_top">About Us</a></li>
             <li><a href="contact.html" target="_top">Contact</a></li>
           </ul>
-          <h3>Destinations</h3>
+          <h3>Explore Our Packages</h3>
           <ul class="level-2">
 
             <li>
-              <p>India</p>
+              <p>Indian destinations</p>
               <ul class="level-3">
-                <li><a href="dom-package.html#kerala">Kerala</a></li>
+                <li><a href="dom-package.html#kerala" target="_top">Kerala</a></li>
                 <li><a href="dom-package.html#kashmir" target="_top">Kashmir</a></li>
                 <li><a href="dom-package.html#sikkim" target="_top">Sikkim</a></li>
                 <li><a href="dom-package.html#andaman" target="_top">Andaman-Nicobar</a></li>
@@ -207,7 +175,7 @@
               </ul>
             </li>
             <li>
-              <p>International</p>
+              <p>International destinations</p>
               <ul class="level-3">
                 <li><a href="int-package.html#europe">Europe</a></li>
                 <li><a href="int-package.html#dubai">Dubai</a></li>
@@ -317,7 +285,7 @@
   </section>
 
   <!-- Cards -->
-  <div class="card-section">
+  <div class="card-section" id="cards">
     <div class="cards-title">
       <h1 class="upcoming-heading animate">Packages</h1>
       <p class="upcoming-subheading animate">Our packages cater to every budget, offering luxurious and affordable
@@ -335,7 +303,7 @@
               the heart of India.
             </p>
           </div>
-          <button class="card__button"><a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank">Contact
+          <button class="card__button"><a href="contact.html" target="_blank">Contact
               Us</a></button>
         </div>
       </article>
@@ -351,50 +319,50 @@
               landscapes of Turkey. Your dream destination awaits!
             </p>
           </div>
-          <button class="card__button"><a href="https://forms.gle/Wf4WEHkcdmxpR3Qa6" target="_blank">Contact
+          <button class="card__button"><a href="contact.html" target="_blank">Contact
               Us</a></button>
         </div>
       </article>
     </div>
   </div>
 
-    <!-- brands -->
-    <section id="brands">
-      <div class="brands-title">
-        <h1 class="upcoming-heading animate">Our Premium Hotel Partners</h1>
-        <p class="upcoming-subheading animate">We have exclusive tie-ups with renowned hospitality brands:</h2>
-      </div>
-      <div class="brand-container">
-        <div class="brand-slider">
-          <div class="brand-slide-track">
-            <div class="brand-slide">
-              <img src="images/tajlogo.png" height="70" width="auto" alt="Taj Hotel" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/lalitlogo.png" height="70" width="auto" alt="Lalit Hotel" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/sarover.png" height="70" width="auto" alt="" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/renestlogo.png" height="70" width="auto" alt="" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/novotellogo.jpg" height="70" width="auto" alt="" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/Lords-Hotels-and-Resorts.png" height="70" width="auto" padding="2px" alt="" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/Lemon_Tree_Hotels_Logo.png" height="70" width="auto" alt="" />
-            </div>
-            <div class="brand-slide">
-              <img src="images/Clarks_Inn.webp" height="70" width="auto" alt="" />
-            </div>
+  <!-- brands -->
+  <section id="brands">
+    <div class="brands-title">
+      <h1 class="upcoming-heading animate">Our Premium Hotel Partners</h1>
+      <p class="upcoming-subheading animate">We have exclusive tie-ups with renowned hospitality brands:</h2>
+    </div>
+    <div class="brand-container">
+      <div class="brand-slider">
+        <div class="brand-slide-track">
+          <div class="brand-slide">
+            <img src="images/tajlogo.png" height="70" width="auto" alt="Taj Hotel" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/lalitlogo.png" height="70" width="auto" alt="Lalit Hotel" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/sarover.png" height="70" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/renestlogo.png" height="70" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/novotellogo.jpg" height="70" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Lords-Hotels-and-Resorts.png" height="70" width="auto" padding="2px" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Lemon_Tree_Hotels_Logo.png" height="70" width="auto" alt="" />
+          </div>
+          <div class="brand-slide">
+            <img src="images/Clarks_Inn.webp" height="70" width="auto" alt="" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- Testimonials -->
   <section class="custom-testimonial-section">
@@ -473,8 +441,6 @@
 
   </section>
 
-  
-    
   <!-- FOOTER -->
   <footer>
     <!-- Main Footer Section -->
@@ -573,7 +539,68 @@
     </section> -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
 
+          // Hide form popup
+          closePopup();
+
+          // Show confirmation message
+          document.getElementById("popupMessageOverlay").style.display = "block";
+          document.getElementById("popupMessage").style.display = "block";
+        });
+      }
+    });
+
+    function openPopup(event) {
+    if (event) event.preventDefault(); // Stops the default anchor jump
+
+    let section = document.getElementById("upcoming");
+    let sectionRect = section.getBoundingClientRect();
+
+    let popupOverlay = document.getElementById("popupOverlay");
+    let popupContainer = document.getElementById("popupContainer");
+
+    // Position overlay over the section
+    popupOverlay.style.display = "block";
+    popupOverlay.style.position = "absolute";
+    popupOverlay.style.top = window.scrollY + sectionRect.top + "px";
+    popupOverlay.style.left = sectionRect.left + "px";
+    popupOverlay.style.width = sectionRect.width + "px";
+    popupOverlay.style.height = sectionRect.height + "px";
+
+    // Position popup inside the section
+    popupContainer.style.position = "absolute";
+    popupContainer.style.top = window.scrollY + sectionRect.top + (sectionRect.height / 2) + "px";
+    popupContainer.style.left = "50%";
+    popupContainer.style.transform = "translate(-50%, -50%)";
+
+    // Show popup
+    popupContainer.style.display = "block";
+
+    // ❌ Disable scrolling on both html and body
+    document.documentElement.style.overflow = "hidden"; // Prevent scroll on the html element
+    document.body.style.overflow = "hidden"; // Prevent scroll on the body element
+}
+
+function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+    document.getElementById("popupContainer").style.display = "none";
+    // ✅ Enable scrolling on both html and body
+    document.documentElement.style.overflow = "auto"; // Allow scrolling on the html element
+    document.body.style.overflow = "auto"; // Allow scrolling on the body element
+}
+
+    function closeConfirmation() {
+      document.getElementById("popupMessageOverlay").style.display = "none";
+      document.getElementById("popupMessage").style.display = "none";
+    }
+
+  </script>
   <script src="js/script.js"></script>
 </body>
 

@@ -42,7 +42,7 @@ tourData.forEach((tour, index) => {
                 ${descriptionText}<br><b class="cost">${cost}<br></b>
                 <span class="star">*</span>T&C apply
             </p>
-            <a href="https://forms.gle/Hc6kEZvhkK8tifD78" target="_blank" class="card-button">Book Now</a>
+            <a href="contact.html" target="_blank" class="card-button">Book Now</a>
         </div>
     `;
 
@@ -50,28 +50,28 @@ tourData.forEach((tour, index) => {
 });
 
 
-// Select all buttons with the class 'card-button'
-const cardButtons = document.querySelectorAll(".card-button");
+// // Select all buttons with the class 'card-button'
+// const cardButtons = document.querySelectorAll(".card-button");
 
-// Function to change background and hover color
-function changeButtonColors(backgroundColor, hoverColor) {
-    cardButtons.forEach((button) => {
-        // Set the background color directly
-        button.style.backgroundColor = backgroundColor;
+// // Function to change background and hover color
+// function changeButtonColors(backgroundColor, hoverColor) {
+//     cardButtons.forEach((button) => {
+//         // Set the background color directly
+//         button.style.backgroundColor = backgroundColor;
 
-        // Set hover effect using CSS variables or custom style
-        button.addEventListener("mouseover", () => {
-            button.style.backgroundColor = hoverColor;
-        });
+//         // Set hover effect using CSS variables or custom style
+//         button.addEventListener("mouseover", () => {
+//             button.style.backgroundColor = hoverColor;
+//         });
 
-        button.addEventListener("mouseout", () => {
-            button.style.backgroundColor = backgroundColor;
-        });
-    });
-}
+//         button.addEventListener("mouseout", () => {
+//             button.style.backgroundColor = backgroundColor;
+//         });
+//     });
+// }
 
-// Example usage:
-changeButtonColors("var(--logo-blue6)", "var(--logo-green1)");  // Change button color to orange and hover to dark red
+// // Example usage:
+// changeButtonColors("var(--logo-blue6)", "var(--logo-green1)");  // Change button color to orange and hover to dark red
 
 // Scroll animation logic
 const observeCards = () => {

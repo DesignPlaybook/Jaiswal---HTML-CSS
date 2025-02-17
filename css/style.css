@@ -324,20 +324,38 @@ main article {
 
 /*  SECTION: Overlay Menu Section
 ----------------------------------------------- */
+/* Overlay Menu Section */
 #full-menu {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
     padding: 8em 5em 2em 5em;
     background-color: var(--white);
     background-image: url("https://www.transparenttextures.com/patterns/church.png");
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-
+    
     /* Enable scrolling inside the menu */
-    overflow-y: visible !important;
+    overflow-y: auto !important;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
+/* Ensure smooth scrolling */
+#full-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+#full-menu::-webkit-scrollbar-thumb {
+    background: grey;
+    /* border-radius: auto; */
+}
+
+/* #full-menu::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+} */
+
 
 
 #full-menu .nav-links {
@@ -346,7 +364,7 @@ main article {
 
 .level-1 {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: (65% 1fr);
     /*make changes to add more content (65% 1fr)*/
     grid-auto-rows: min-content;
     grid-gap: 2em;
@@ -356,7 +374,8 @@ main article {
     font-family: 'heading';
     font-weight: 600;
     font-size: 1.8rem;
-    /* text-transform: uppercase; */
+    padding: 0.3em 0.6em;
+    text-transform: uppercase;
 }
 
 .level-1 p {
@@ -511,14 +530,10 @@ main article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 6rem 6rem;
-    background-color: #ffffff;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    padding: 3rem 6rem;
     text-align: center;
+    position: relative;
 }
-
 
 .upcoming-heading {
     /* margin-bottom: 20px; */
@@ -644,15 +659,11 @@ main article {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     padding: 2rem 0;
-    /* padding-bottom: 1; */
-    background: white;
-    /* Ensure the section has a background */
-    /* Subtle shadow around section */
-    /* margin: 3rem auto; */
-    /* Add spacing to make shadow visible */
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* background: white; */
     width: 100%;
-    /* Prevent full-width stretching */
 }
+
 
 
 .cards-title,
@@ -843,7 +854,7 @@ main article {
 /* brands */
 #brands {
     padding: 3rem 1rem;
-    padding-top: 0;
+    /* padding-top: 1rem; */
     /* border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
@@ -966,6 +977,9 @@ main article {
     height: 70%;
     background: #a8cf46c2;
     z-index: -1;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     transform: translate(-50%, -50%); /* Centers the oval */
 }
 
@@ -1159,6 +1173,32 @@ main article {
     .custom-see-more {
         padding: 0rem;
         font-size: 12px;
+    }
+    .popup-container{
+        width: 80%;
+        padding: 1rem;
+    }
+    .popup-content h2{
+        font-size: 0.9rem;
+    }
+
+    .popup-content{
+        font-size: 0.8rem;
+    }
+
+    #popupMessage{
+        max-width: 80%;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* edit again */
+    .cards-title{
+        margin: 1rem;
+    }
+
+    .floating-icons-container{
+        scale: 90%;
     }
 }
 
@@ -1730,29 +1770,25 @@ footer {
     transform: translateX(-5px);
 }
 
-
 /* Popup Overlay */
 .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute;
     background: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 999;
 }
 
+/* Prevent scrolling when popup is open */
+body.noscroll {
+    overflow: hidden;
+}
+
 /* Popup Container */
 .popup-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: auto;
-    transform: translate(-50%, -50%);
+    position: absolute;
     background: white;
     padding: 2rem;
-    width: auto;
+    max-width: 500px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
@@ -1790,12 +1826,13 @@ footer {
 input, textarea {
     width: 100%;
     padding: 10px;
+    margin: 1px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
 }
 
-button {
+.popup-message button, .popup-container button {
     background-color: var(--logo-green1);
     color: white;
     padding: 10px;
@@ -1804,12 +1841,13 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+.popup-message button, .popup-container button:hover {
     background-color: var(--logo-blue6);
 }
 
 /* Confirmation Popup */
-.popup-message {
+#popupMessage {
+    color: #000000;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1822,4 +1860,7 @@ button:hover {
     text-align: center;
     display: none;
     z-index: 1001;
+}
+#popupMessage p{
+    margin-bottom: 1rem;
 }

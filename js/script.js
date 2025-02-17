@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         repeat: -1,
         yoyo: true,
         ease: "expo.out",
-        defaults: { overwrite: false } // ✅ Prevent GSAP from overriding brand slider
+        defaults: { overwrite: false }
     });
 
     while (i < 6) {
@@ -81,24 +81,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const slides = Array.from(document.querySelectorAll(".brand-slide"));
 
         if (brandSlider && slides.length > 0) {
-            // ✅ Prevent GSAP from affecting brand slider
             gsap.set(".brand-slide-track", { clearProps: "all" });
 
-            // ✅ Clone slides to create infinite loop effect
             slides.forEach((slide) => {
                 const clone = slide.cloneNode(true);
                 brandSlider.appendChild(clone);
             });
 
-            // ✅ Calculate correct total width including gaps
-            const slideWidth = 180 ; // Width of each slide
+            const slideWidth = 180; // Width of each slide
             const slideGap = 20; // Gap between slides
-            const totalSlides = slides.length * 2; // Original + Clones
+            const totalSlides = slides.length * 2;
 
-            // ✅ Set width for smooth scrolling
             brandSlider.style.width = `${totalSlides * (slideWidth + slideGap)}px`;
 
-            // ✅ Update CSS animation dynamically
             const styleSheet = document.styleSheets[0];
             styleSheet.insertRule(
                 `@keyframes brandScroll {
@@ -108,15 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 styleSheet.cssRules.length
             );
         }
-    }, 500); // ✅ Delay ensures GSAP initializes first
+    }, 500);
 
     // ============================
     // 🏆 TESTIMONIAL SLIDER 🏆
     // ============================
+
     const testimonials = document.querySelectorAll(".custom-testimonial-item");
     const prevButton = document.querySelector(".custom-testimonial-prev");
     const nextButton = document.querySelector(".custom-testimonial-next");
-    
+
     let currentIndex = 0;
 
     function updateTestimonial(index) {
@@ -139,13 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
             updateTestimonial(currentIndex);
         });
 
-        // Auto-scroll every 6 seconds
         setInterval(() => {
             currentIndex = (currentIndex + 1) % testimonials.length;
             updateTestimonial(currentIndex);
         }, 6000);
 
-        // Initialize first testimonial
         updateTestimonial(currentIndex);
-    }
+    }    
 });
