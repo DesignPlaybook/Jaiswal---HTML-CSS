@@ -65,8 +65,8 @@
             <li><a href="index.html" target="_top">Home</a></li>
             <li><a href="dom-package.html" target="_top">Domestic Packages</a></li>
             <li><a href="int-package.html" target="_top">International Packages</a></li>
-            <li><a href="contact.html" target="_top">Contact</a></li>
             <li><a href="about.html" target="_top">About Us</a></li>
+            <li><a href="contact.html" target="_top">Contact</a></li>
           </ul>
           <ul class="menu">
             <li id="burger">
@@ -557,43 +557,43 @@
     });
 
     function openPopup(event) {
-    if (event) event.preventDefault(); // Stops the default anchor jump
+      if (event) event.preventDefault(); // Stops the default anchor jump
 
-    let section = document.getElementById("upcoming");
-    let sectionRect = section.getBoundingClientRect();
+      let section = document.getElementById("upcoming");
+      let sectionRect = section.getBoundingClientRect();
 
-    let popupOverlay = document.getElementById("popupOverlay");
-    let popupContainer = document.getElementById("popupContainer");
+      let popupOverlay = document.getElementById("popupOverlay");
+      let popupContainer = document.getElementById("popupContainer");
 
-    // Position overlay over the section
-    popupOverlay.style.display = "block";
-    popupOverlay.style.position = "absolute";
-    popupOverlay.style.top = window.scrollY + sectionRect.top + "px";
-    popupOverlay.style.left = sectionRect.left + "px";
-    popupOverlay.style.width = sectionRect.width + "px";
-    popupOverlay.style.height = sectionRect.height + "px";
+      // Position overlay over the section
+      popupOverlay.style.display = "block";
+      popupOverlay.style.position = "absolute";
+      popupOverlay.style.top = window.scrollY + sectionRect.top + "px";
+      popupOverlay.style.left = sectionRect.left + "px";
+      popupOverlay.style.width = sectionRect.width + "px";
+      popupOverlay.style.height = sectionRect.height + "px";
 
-    // Position popup inside the section
-    popupContainer.style.position = "absolute";
-    popupContainer.style.top = window.scrollY + sectionRect.top + (sectionRect.height / 2) + "px";
-    popupContainer.style.left = "50%";
-    popupContainer.style.transform = "translate(-50%, -50%)";
+      // Position popup inside the section
+      popupContainer.style.position = "absolute";
+      popupContainer.style.top = window.scrollY + sectionRect.top + (sectionRect.height / 2) + "px";
+      popupContainer.style.left = "50%";
+      popupContainer.style.transform = "translate(-50%, -50%)";
 
-    // Show popup
-    popupContainer.style.display = "block";
+      // Show popup
+      popupContainer.style.display = "block";
 
-    // ❌ Disable scrolling on both html and body
-    document.documentElement.style.overflow = "hidden"; // Prevent scroll on the html element
-    document.body.style.overflow = "hidden"; // Prevent scroll on the body element
-}
+      // ❌ Disable scrolling on both html and body
+      document.documentElement.style.overflow = "hidden"; // Prevent scroll on the html element
+      document.body.style.overflow = "hidden"; // Prevent scroll on the body element
+    }
 
-function closePopup() {
-    document.getElementById("popupOverlay").style.display = "none";
-    document.getElementById("popupContainer").style.display = "none";
-    // ✅ Enable scrolling on both html and body
-    document.documentElement.style.overflow = "auto"; // Allow scrolling on the html element
-    document.body.style.overflow = "auto"; // Allow scrolling on the body element
-}
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+      document.getElementById("popupContainer").style.display = "none";
+      // ✅ Enable scrolling on both html and body
+      document.documentElement.style.overflow = "auto"; // Allow scrolling on the html element
+      document.body.style.overflow = "auto"; // Allow scrolling on the body element
+    }
 
     function closeConfirmation() {
       document.getElementById("popupMessageOverlay").style.display = "none";
