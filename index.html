@@ -29,6 +29,9 @@
 
   <!-- GSAP for Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <!-- Counter-Up Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const elements = document.querySelectorAll(".animate, .animate-left, .animate-right, .animate-fade");
@@ -43,6 +46,23 @@
 
       elements.forEach(element => observer.observe(element));
     })
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".client-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.5 });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
   </script>
 
 </head>
@@ -262,27 +282,48 @@
 
   <!-- Upcoming Event Section -->
   <section class="upcoming-section" id="upcoming">
-    <h1 class="upcoming-heading animate">Upcoming Event</h1>
-    <h2 class="upcoming-subheading animate">Prayagraj - Mahakumbh Mela</h2>
-    <div class="upcoming-content-wrapper">
-      <div class="upcoming-content animate-left">
-        <p class="upcoming-text">
-          Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to Prayagraj!
-          This thoughtfully curated trip offers an opportunity to explore the city's historic landmarks, including
-          the majestic Allahabad Fort, Anand Bhavan, and serene ghats. Witness the timeless rituals performed at
-          the Sangam and soak in the vibrant local culture. Whether you’re a history enthusiast, a spiritual seeker,
-          or simply looking to experience the beauty of India’s heritage, this trip promises a truly enriching
-          experience. Join us for this soulful adventure and create memories to cherish forever!
-        </p>
-      </div>
-      <div class="upcoming-image-wrapper animate-right">
+    <div class="upcoming-container">
+      <!-- Left: Image -->
+      <div class="upcoming-image-wrapper animate-left">
         <img src="images/prayagraj.jpg" alt="Prayagraj Image" class="upcoming-img" />
       </div>
-    </div>
-    <div class="upcoming-button-wrapper animate-fade">
-      <a href="#upcoming" class="upcoming-cta-button" onclick="openPopup()">Book Now</a>
+  
+      <!-- Right: Content -->
+      <div class="upcoming-content animate-right">
+        <div class="upcoming-title">
+          <h2 class="upcoming-subheading animate">Upcoming Event</h2>
+          <h1 class="upcoming-heading animate">Great Opportunity for a Spiritual Journey</h1>
+        </div>
+        <p class="upcoming-text">
+          Embark on an unforgettable journey to the spiritual heart of India with our upcoming trip to Prayagraj!
+          Explore the city's historic landmarks, witness timeless rituals at the Sangam, and soak in the vibrant culture.
+          Whether you're a history enthusiast, a spiritual seeker, or simply looking for an enriching experience,
+          this trip promises memories to cherish forever!
+        </p>
+  
+        <!-- Stats Section -->
+        <div class="upcoming-stats animate-fade">
+                  
+        <div class="customer-count">
+            <div class="customer-container">
+                <div class="customer-row">
+                    <div class="customer-col">
+                        <h1><span class="customer-counter">2,523</span></h1>
+                        <h3>Trusted Travelers</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+  
+        <!-- CTA Button -->
+        <div class="upcoming-button-wrapper animate-fade">
+          <a href="#upcoming" class="upcoming-cta-button" onclick="openPopup()">Book Now</a>
+        </div>
+      </div>
     </div>
   </section>
+  
 
   <!-- Cards -->
   <div class="card-section" id="cards">
@@ -363,6 +404,23 @@
       </div>
     </div>
   </section>
+
+  <section class="clients-section">
+    <div class="brands-title"><h1 class="upcoming-heading animate">Our Clients</h1>
+      <p class="upcoming-subheading animate">Our client list includes the reputed organizations in the city:</h2>
+    </div>
+    <div class="clients-grid">
+        <div class="client-card">S S Construction</div>
+        <div class="client-card">Supriya Construction</div>
+        <div class="client-card">Shubham Builders & Developers</div>
+        <div class="client-card">Maruti Suzuki ARENA (My Car, Navi Mumbai)</div>
+        <div class="client-card">Vestige Marketing Pvt. Ltd</div>
+        <div class="client-card">Asclepius Wellness Private Limited (AWPL)</div>
+        <div class="client-card">Samarth Success Life Marketing Pvt. Ltd</div>
+        <div class="client-card">Vivaamart Enterprises India Pvt. Ltd</div>
+        <div class="client-card">Sairama Real Estate</div>
+    </div>
+</section>
 
   <!-- Testimonials -->
   <section class="custom-testimonial-section">
@@ -455,8 +513,8 @@
       <section class="flex-content padding_2x">
         <h3 class="title small">Contact</h3>
         <p>
-          Mobile: <a href="tel:+919372787566">9372787566</a> & <a href="tel:+918268860844">8268860844</a><br>
-          Email: <a href="mailto:adarsh.jaiswalholidays@gmail.com">adarsh.jaiswalholidays@gmail.com</a>
+          Mobile : <a href="tel:+918268860844">8268860844</a> & <a href="tel:+919372787566">9372787566</a><br>
+          Email : <a href="mailto:adarsh.jaiswalholidays@gmail.com">adarsh.jaiswalholidays@gmail.com</a>
         </p>
 
         <div class="social_icons">
@@ -601,7 +659,9 @@
     }
 
   </script>
-  <script src="js/script.js"></script>
+  
+  <script src="js/counter.js"></script>
+   <script src="js/script.js"></script>
 </body>
 
 </html>
