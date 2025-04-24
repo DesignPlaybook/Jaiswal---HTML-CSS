@@ -1,0 +1,340 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url('https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.waveWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.centerHeading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    text-align: center;
+}
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) scaleY(1);
+    }
+
+    50% {
+        transform: translateX(-25%) scaleY(0.55);
+    }
+
+    100% {
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+.bgTop {
+    z-index: 3;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 2;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+    animation: move_wave 30s linear infinite;
+    animation-delay: 5s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+    animation: move_wave 50s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+    animation: move_wave 88s linear infinite;
+}
+
+
+   
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.services-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.services-main-title {
+    font-size: 32px;
+    color: #2a5885;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.services-main-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.services-row {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.services-half-column {
+    flex: 0 0 calc(50% - 10px);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.services-third-column {
+    flex: 0 0 calc(33.33% - 14px);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.services-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+}
+
+.services-item-content {
+    padding: 25px;
+}
+
+.services-item-title {
+    font-size: 20px;
+    color: #2a5885;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.services-item-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Divider for main sections */
+.divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .services-third-column {
+        flex: 0 0 calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-main-title {
+        font-size: 28px;
+    }
+    
+    .services-main-description {
+        font-size: 15px;
+    }
+    
+    .services-half-column,
+    .services-third-column {
+        flex: 0 0 100%;
+    }
+    
+    .services-item-title {
+        font-size: 18px;
+    }
+    
+    .services-item-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 30px 15px;
+    }
+    
+    .services-main-title {
+        font-size: 24px;
+    }
+    
+    .services-item-content {
+        padding: 20px;
+    }
+}
+
+.promo-section {
+    margin-bottom: 5rem;
+    width: 100%;
+    position: relative;
+    padding: 30px 0; /* Reduced from 60px to 30px */
+    background-image: url("https://travelojo.in/wp-content/uploads/2022/01/Blog-Pic.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    overflow: hidden;
+}
+
+.promo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(232, 23, 95, 0.8);
+    z-index: 0;
+}
+
+.promo-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; /* Center everything horizontally */
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.promo-image-column,
+.promo-text-column,
+.promo-button-column {
+    flex: 0 0 auto;
+    padding: 10px;
+}
+
+.promo-image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-main-title {
+    font-size: 24px; /* Slightly smaller */
+    font-weight: 700;
+    margin-bottom: 5px; /* Reduced margin */
+    color: white;
+}
+
+.promo-subtitle {
+    font-size: 14px;
+    color: #ffe9e9;
+    margin-bottom: 10px;
+}
+
+.promo-button {
+    padding: 10px 20px; /* Slightly smaller */
+    background-color: #111a2c;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.promo-button:hover {
+    background-color: #000;
+    transform: scale(1.05);
+}
+
+.promo-badge-image {
+    max-width: 70px; /* Slightly smaller */
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .promo-image-column,
+    .promo-text-column,
+    .promo-button-column {
+        flex: 0 0 100%;
+    }
+}
+
