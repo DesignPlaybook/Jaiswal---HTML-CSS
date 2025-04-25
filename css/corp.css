@@ -1,0 +1,281 @@
+/* Main hero section styling */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light gray background, change as needed */
+    overflow: hidden;
+    padding: 0;
+    margin-top: 6rem;
+  }
+  
+  /* Background overlay */
+  /* .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  } */
+  
+  /* Wave shape divider */
+  .shape-divider.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 2;
+  }
+  
+  .shape-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+  
+  .shape-fill {
+    fill: #ffffff; /* White wave fill */
+  }
+  
+  /* Container styling */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* Text content styling */
+  .heading-title {
+    font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Layout columns */
+  .column {
+    position: relative;
+  }
+  
+  .half-width {
+    width: 50%;
+    float: left;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Clear floats */
+  .widget-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .heading-title {
+      font-size: 2.5rem;
+    }
+    
+    .half-width {
+      width: 100%;
+      float: none;
+    }
+    
+    .hero-section {
+      min-height: 60vh;
+    }
+  }
+  
+  .hero-section {
+    background-image: url('https://images.pexels.com/photos/8372634/pexels-photo-8372634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+  }
+  
+
+
+/* Base Styles */
+.corporate-services {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .services-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("https://travelojo.in/wp-content/uploads/2022/01/h1-backround-1.jpg"); */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  /* .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(207, 207, 207, 0.5);
+    z-index: 0;
+  } */
+  
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #fff;
+  }
+  
+  .services-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .services-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #1a4f8c;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 1rem;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-image {
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .service-card:hover .service-image img {
+    transform: scale(1.05);
+  }
+  
+  .service-content {
+    padding: 25px;
+  }
+  
+  .service-content h2 {
+    color: #2a4365;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .service-content h3 {
+    color: #2c5282;
+    font-size: 1.2rem;
+    margin: 20px 0 10px;
+    font-weight: 500;
+  }
+  
+  .service-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .service-content ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .service-content li {
+    margin-bottom: 8px;
+    color: #4a5568;
+  }
+  
+  /* Contact Button */
+  .contact-button {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .contact-button:hover {
+    background-color: #1a4f8c;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .services-header h1 {
+      font-size: 2rem;
+    }
+    
+    .services-header p {
+      font-size: 1rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .service-image {
+      height: 200px;
+    }
+  }
