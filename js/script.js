@@ -1,5 +1,62 @@
 document.addEventListener("DOMContentLoaded", function () {
     // ============================
+    // 🏆 DROPDOWN LOGIC 🏆
+    // ============================
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    function closeAllDropdowns() {
+        dropdowns.forEach(dropdown => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) {
+                content.style.display = 'none';
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(10px)';
+            }
+        });
+    }
+
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.dropbtn');
+
+        if (!link) return;
+
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const content = dropdown.querySelector('.dropdown-content');
+                if (!content) return;
+
+                if (content.style.display === 'block') {
+                    // Close if open
+                    content.style.display = 'none';
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(10px)';
+                } else {
+                    // Close others first
+                    closeAllDropdowns();
+                    // Open this one
+                    content.style.display = 'block';
+                    setTimeout(() => {
+                        content.style.opacity = '1';
+                        content.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside (only for mobile)
+    document.addEventListener('click', function (event) {
+        if (window.innerWidth <= 768) {
+            const isDropdown = event.target.closest('.dropdown');
+            if (!isDropdown) {
+                closeAllDropdowns();
+            }
+        }
+    });
+
+    // ============================
     // 🏆 HERO SECTION ANIMATION 🏆
     // ============================
 
@@ -141,5 +198,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 6000);
 
         updateTestimonial(currentIndex);
-    }    
+    }
 });

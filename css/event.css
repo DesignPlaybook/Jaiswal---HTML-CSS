@@ -1,0 +1,319 @@
+html {
+    background: #ffffff;
+    color: #151618;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #242424;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 60px 20px; */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+.price {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 120%;
+    color: white;
+}
+
+h2 {
+    color: #151618;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 2rem 0;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--logo-blue3);
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #138ed4;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+p.small {
+    color: var(--logo-blue1);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.overlay {
+    position: relative;
+    height: 80vh;
+    background: url('https://images.pexels.com/photos/50675/banquet-wedding-society-deco-50675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* dark transparent overlay */
+    z-index: 1;
+}
+
+.event-hero {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7.5rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+
+/* .hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+} */
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Sections */
+.event-intro,
+.event-types,
+.event-cta {
+    padding: 2rem 7.5rem;
+}
+
+.event-intro {
+    background: #ffffff;
+}
+
+.event-intro h2 {
+    color: var(--logo-blue1);
+    margin-bottom: 1.5rem;
+}
+
+.event-intro p {
+    max-width: 90%;
+    text-align: justify;
+}
+
+/* Event Grid */
+.event-types {
+    background: #f1efec;
+    text-align: center;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.event-card h4 {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* CTA Section */
+.event-cta {
+    background-color: var(--logo-blue1);
+    color: white;
+    text-align: center;
+}
+
+.event-cta h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.event-cta p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.event-cta .btn {
+    background-color: var(--logo-blue4);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.event-cta .btn:hover {
+    background-color: white;
+    color: var(--logo-blue1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+
+    .event-hero,
+    .event-intro,
+    .event-types,
+    .event-cta {
+        /* padding: 4rem 6rem; */
+    }
+}
+
+@media (max-width: 992px) {
+
+    .event-hero,
+    .event-intro,
+    .event-types,
+    .event-cta {
+        padding: 3rem;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .event-hero,
+    .event-intro,
+    .event-types,
+    .event-cta {
+        padding: 2rem;
+    }
+
+    .event-hero {
+        height: 50vh;
+        padding: 0 2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .event-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .event-hero,
+    .event-intro,
+    .event-types,
+    .event-cta {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card img {
+        height: 180px;
+    }
+}
